@@ -8,8 +8,8 @@
 	<packaging>war</packaging>
 	<version>0.1-SNAPSHOT</version>
 
-	<name>fj-daogen-sample-web</name>
-	<description></description>
+	<name>fj-daogen-quickstart</name>
+	<description>git push --set-upstream origin develop</description>
 
 	<licenses>
 		<license>
