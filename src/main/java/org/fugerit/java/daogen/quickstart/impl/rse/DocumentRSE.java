@@ -37,6 +37,11 @@ public class DocumentRSE extends BasicRSExtractor<ModelDocument> {
 		current.setUpdateDate( rs.getTimestamp( "UPDATE_DATE" )  );
 		current.setPath( rs.getString( "PATH" )  );
 		current.setState( rs.getBigDecimal( "STATE" )  );
+		try { 
+			current.setInfo( org.fugerit.java.core.db.daogen.CharArrayDataHandler.newHandlerPreload( rs.getClob( "INFO" ) )  );
+		} catch (Exception e) {
+			throw new SQLException( "Errore estrazione campo : INFO", e );
+		}
 		return current;
 	} 
 }

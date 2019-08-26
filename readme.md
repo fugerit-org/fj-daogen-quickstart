@@ -81,7 +81,7 @@ Run the main class src/main/test :
 
 `test.org.fugerit.java.daogen.quickstart.tools.DaogenDump`
 
-This will dump the configuration, you can then copy paste from output the configuration of the new entity : 
+This will dump the configuration, you can then copy paste from output the configuration of the new entity ( src/main/resources/daogen/daogen-config.xml from section 2.2 ) : 
 
 ```
   <entity catalog="PUBLIC" comments="equipments meta informations" foreignKeys="PUBLIC.DAOGEN_QUICKSTART.PERSON,PUBLIC.DAOGEN_QUICKSTART.PERSON" id="PUBLIC.DAOGEN_QUICKSTART.EQUIPMENT" name="EQUIPMENT" primaryKey="ID" schema="DAOGEN_QUICKSTART">
@@ -98,7 +98,7 @@ This will dump the configuration, you can then copy paste from output the config
 
 *3.3 Code generation*
 
-Run the main class src/main/test :
+Run the main class src/test/java :
 
 `test.org.fugerit.java.daogen.quickstart.tools.DaogenRun`
 

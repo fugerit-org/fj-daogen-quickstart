@@ -71,10 +71,12 @@ public class ObjDocument extends WrapperDocument implements SQLData, StructMappe
 		this.setUpdateDate( stream.readTimestamp() );
 		this.setPath( stream.readString() );
 		this.setState( stream.readBigDecimal() );
+		this.setInfo( org.fugerit.java.core.db.daogen.SQLTypeConverter.clobToCharHandler( (java.sql.Clob) stream.readObject() ) );
 	}
 
 	@Override
 	public void writeSQL(SQLOutput stream) throws SQLException {
+		throwUnsupported( "Method writeSQL() not implemented for "+this.getSQLTypeName() );
 		stream.writeBigDecimal( this.getId() );
 		stream.writeBigDecimal( this.getIdOwner() );
 		stream.writeBigDecimal( this.getIdCreator() );
@@ -82,6 +84,7 @@ public class ObjDocument extends WrapperDocument implements SQLData, StructMappe
 		stream.writeTimestamp( org.fugerit.java.core.db.daogen.SQLTypeConverter.utilDateToSqlTimestamp( this.getUpdateDate() ) );
 		stream.writeString( this.getPath() );
 		stream.writeBigDecimal( this.getState() );
+		// clob must be writtern separately : this.getInfo();
 	}
 
 }

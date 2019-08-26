@@ -62,6 +62,7 @@
     <field comments="Document update time" id="UPDATE_DATE" javaType="java.sql.Timestamp" nullable="no" size="0" sqlType="93" sqlTypeName="TIMESTAMP"/>
     <field comments="Documents path" id="PATH" javaType="java.lang.String" nullable="no" size="1024" sqlType="12" sqlTypeName="VARCHAR"/>
     <field comments="Document state" id="STATE" javaType="java.lang.Long" nullable="no" size="0" sqlType="-5" sqlTypeName="BIGINT"/>
+    <field comments="Documents info" id="INFO" javaType="java.sql.Clob" nullable="no" size="1073741824" sqlType="2005" sqlTypeName="CLOB"/>    
   </entity>
 	
 </daogen-config>

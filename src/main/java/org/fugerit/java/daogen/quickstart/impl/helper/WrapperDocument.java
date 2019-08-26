@@ -107,4 +107,14 @@ public class WrapperDocument extends BasicWrapper<ModelDocument> implements Mode
 		return this.unwrapModel().getState();
 	}
 
+	@Override
+	public void setInfo( org.fugerit.java.core.db.daogen.CharArrayDataHandler value ) {
+		this.unwrapModel().setInfo( value );
+	}
+
+	@Override
+	public org.fugerit.java.core.db.daogen.CharArrayDataHandler getInfo() {
+		return this.unwrapModel().getInfo();
+	}
+
 }

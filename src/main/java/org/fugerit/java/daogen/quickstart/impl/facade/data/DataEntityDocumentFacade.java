@@ -51,6 +51,7 @@ public class DataEntityDocumentFacade extends BasicDataFacade<ModelDocument> imp
  	public final static String COL_UPDATE_DATE = "UPDATE_DATE";
  	public final static String COL_PATH = "PATH";
  	public final static String COL_STATE = "STATE";
+ 	public final static String COL_INFO = "INFO";
 
 	/* loadAll( context ) is inherited from BasicDataFacade */
 
@@ -69,6 +70,7 @@ public class DataEntityDocumentFacade extends BasicDataFacade<ModelDocument> imp
 			query.andEqualParam( COL_UPDATE_DATE, model.getUpdateDate() );
 			query.andEqualParam( COL_PATH, model.getPath() );
 			query.andEqualParam( COL_STATE, model.getState() );
+			query.andEqualParam( COL_INFO, model.getInfo() );
 		}
 		daoHelper.loadAllHelper( result.getList(), query, this.getRse() ); 
 		return result;
@@ -89,6 +91,7 @@ public class DataEntityDocumentFacade extends BasicDataFacade<ModelDocument> imp
 		query.addParam( COL_UPDATE_DATE, model.getUpdateDate() );
 		query.addParam( COL_PATH, model.getPath() );
 		query.addParam( COL_STATE, model.getState() );
+		query.addParam( COL_INFO, model.getInfo() );
 		int res = daoHelper.update( query );
 		this.evaluteSqlUpdateResult(res, model, result);
 		return result;
@@ -126,6 +129,7 @@ public class DataEntityDocumentFacade extends BasicDataFacade<ModelDocument> imp
 		query.addSetParam( COL_UPDATE_DATE, model.getUpdateDate() );
 		query.addSetParam( COL_PATH, model.getPath() );
 		query.addSetParam( COL_STATE, model.getState() );
+		query.addSetParam( COL_INFO, model.getInfo() );
 		query.andWhereParam( COL_ID, model.getId() );
 		int res = daoHelper.update( query );
 		this.evaluteSqlUpdateResult(res, model, result);

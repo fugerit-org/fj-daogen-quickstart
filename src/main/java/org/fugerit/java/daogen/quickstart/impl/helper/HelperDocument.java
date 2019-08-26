@@ -109,6 +109,18 @@ public class HelperDocument extends BasicHelper implements ModelDocument {
 		return this.state;
 	}
 
+	private org.fugerit.java.core.db.daogen.CharArrayDataHandler info;
+
+	@Override
+	public void setInfo( org.fugerit.java.core.db.daogen.CharArrayDataHandler value ) {
+		this.info = value;
+	}
+
+	@Override
+	public org.fugerit.java.core.db.daogen.CharArrayDataHandler getInfo() {
+		return this.info;
+	}
+
 	@Override
 	public String toString() {
 		StringBuilder buffer = new StringBuilder();
@@ -127,6 +139,8 @@ public class HelperDocument extends BasicHelper implements ModelDocument {
 		buffer.append( this.getPath() );
 		buffer.append( ",state=" );
 		buffer.append( this.getState() );
+		buffer.append( ",info=" );
+		buffer.append( this.getInfo() );
 		buffer.append( "]" );
 		return buffer.toString();
 	}

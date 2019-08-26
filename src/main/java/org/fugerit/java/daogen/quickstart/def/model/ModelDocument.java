@@ -143,4 +143,22 @@ public interface ModelDocument {
 	 */
 	void setState( java.math.BigDecimal value );
 
+	/**
+	 * Getter method for property : info (nullable: no)
+	 *
+	 * Documents info
+	 *
+	 * @return the value of info
+	 */
+	org.fugerit.java.core.db.daogen.CharArrayDataHandler getInfo();
+
+	/**
+	 * Setter method for property : info (nullable: no)
+	 *
+	 * Documents info
+	 *
+	 * @param value the value of info
+	 */
+	void setInfo( org.fugerit.java.core.db.daogen.CharArrayDataHandler value );
+
 }

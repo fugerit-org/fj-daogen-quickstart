@@ -33,7 +33,8 @@ CREATE TABLE daogen_quickstart.document (
 	creation_date TIMESTAMP NOT NULL,
 	update_date TIMESTAMP NOT NULL,
 	path VARCHAR(1024) NOT NULL,
-	state BIGINT NOT NULL
+	state BIGINT NOT NULL,
+	info clob NOT NULL
 );
 
 ALTER TABLE daogen_quickstart.document ADD CONSTRAINT document_pk PRIMARY KEY ( id );
@@ -46,7 +47,8 @@ COMMENT ON COLUMN daogen_quickstart.document.id_creator IS 'Reference to creator
 COMMENT ON COLUMN daogen_quickstart.document.creation_date IS 'Document creation time';
 COMMENT ON COLUMN daogen_quickstart.document.update_date IS 'Document update time';
 COMMENT ON COLUMN daogen_quickstart.document.path IS 'Documents path';
+COMMENT ON COLUMN daogen_quickstart.document.info IS 'Documents info';
 COMMENT ON COLUMN daogen_quickstart.document.state IS 'Document state';
 
-INSERT INTO daogen_quickstart.document VALUES ( 10, 3, 1, '2019-01-01', '2019-01-02', 'Silmarillion', 1 );
+INSERT INTO daogen_quickstart.document VALUES ( 10, 3, 1, '2019-01-01', '2019-01-02', 'Silmarillion', 1, 'TEST' );
 
