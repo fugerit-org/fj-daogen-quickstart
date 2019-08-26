@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
@@ -17,88 +18,96 @@
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
-	
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java-version-compliance>1.8</java-version-compliance>
 		<j2ee-version-compliance>6.0</j2ee-version-compliance>
-	    <maven.compiler.source>${java-version-compliance}</maven.compiler.source>
-	    <maven.compiler.target>${java-version-compliance}</maven.compiler.target>	
+		<maven.compiler.source>${java-version-compliance}</maven.compiler.source>
+		<maven.compiler.target>${java-version-compliance}</maven.compiler.target>
 		<fj-version>0.5.3.1</fj-version>
 		<fj-daogen-version>0.1.4</fj-daogen-version>
-	    <junit-version>4.12</junit-version>
-	    <hsqldb-version>2.3.4</hsqldb-version>		
-	    <slf4j-version>1.7.26</slf4j-version>		
-	    <poi-version>4.1.0</poi-version>
-	    <dbcp-version>1.4</dbcp-version>
-	    <log4j-version>1.2.17</log4j-version>	    	
+		<jersey-version>2.26-b06</jersey-version>
+		<junit-version>4.12</junit-version>
+		<hsqldb-version>2.3.4</hsqldb-version>
+		<slf4j-version>1.7.26</slf4j-version>
+		<poi-version>4.1.0</poi-version>
+		<dbcp-version>1.4</dbcp-version>
+		<log4j-version>1.2.17</log4j-version>
 	</properties>
-	
+
 	<build>
-		
+
 		<plugins>
-		
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.2.3</version>
+			</plugin>
+
 		</plugins>
-		
+
 	</build>
 
 	<dependencies>
-	
+
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
 			<version>${j2ee-version-compliance}</version>
 			<scope>provided</scope>
-		</dependency>	
-	
-		<dependency>
-		    <groupId>org.glassfish.jersey.containers</groupId>
-		    <artifactId>jersey-container-servlet</artifactId>
-		    <version>2.26-b06</version>
 		</dependency>
-		
+
 		<dependency>
-		    <groupId>org.glassfish.jersey.inject</groupId>
-		    <artifactId>jersey-hk2</artifactId>
-		    <version>2.26-b06</version>
+			<groupId>org.glassfish.jersey.containers</groupId>
+			<artifactId>jersey-container-servlet</artifactId>
+			<version>${jersey-version}</version>
 		</dependency>
-		
+
 		<dependency>
-		    <groupId>org.glassfish.jersey.media</groupId>
-		    <artifactId>jersey-media-json-jackson</artifactId>
-		    <version>2.26-b06</version>
-		</dependency>		
-		
+			<groupId>org.glassfish.jersey.inject</groupId>
+			<artifactId>jersey-hk2</artifactId>
+			<version>${jersey-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.glassfish.jersey.media</groupId>
+			<artifactId>jersey-media-json-jackson</artifactId>
+			<version>${jersey-version}</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.fugerit.java</groupId>
 			<artifactId>fj-test</artifactId>
 			<version>${fj-version}</version>
-		</dependency>	
-		
+		</dependency>
+
 		<dependency>
 			<groupId>org.fugerit.java</groupId>
 			<artifactId>fj-core</artifactId>
 			<version>${fj-version}</version>
-		</dependency>	
-	
+		</dependency>
+
 		<dependency>
 			<groupId>org.fugerit.java</groupId>
 			<artifactId>fj-daogen-base</artifactId>
 			<version>${fj-daogen-version}</version>
-		</dependency>		
-	
-        <dependency>
-            <groupId>org.hsqldb</groupId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hsqldb</groupId>
 			<artifactId>hsqldb</artifactId>
 			<version>${hsqldb-version}</version>
-		</dependency>			
-			
+		</dependency>
+
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 			<version>${slf4j-version}</version>
-		</dependency>		
-		
+		</dependency>
+
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>jcl-over-slf4j</artifactId>
@@ -108,13 +117,13 @@
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>${slf4j-version}</version>
-		</dependency>		
-		
+		</dependency>
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>${junit-version}</version>
-		</dependency>			
+		</dependency>
 
 	</dependencies>
 
@@ -122,11 +131,11 @@
 		<url>http://www.fugerit.org</url>
 		<name>Fugerit</name>
 	</organization>
-	
+
 	<url>http://www.fugerit.org/java/</url>
-	
+
 	<profiles>
-	
+
 		<profile>
 			<id>full</id>
 			<build>
@@ -157,11 +166,11 @@
 								</goals>
 							</execution>
 						</executions>
-					</plugin>			
+					</plugin>
 				</plugins>
 			</build>
 		</profile>
-	
+
 	</profiles>
-	
+
 </project>
