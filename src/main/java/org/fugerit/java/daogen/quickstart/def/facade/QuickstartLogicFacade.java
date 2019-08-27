@@ -1,8 +1,8 @@
 package org.fugerit.java.daogen.quickstart.def.facade;
 
-import org.fugerit.java.daogen.quickstart.def.facade.EntityPersonFacade;
-import org.fugerit.java.daogen.quickstart.def.facade.EntityDocumentFacade;
 import org.fugerit.java.core.db.dao.DAOException;
+import org.fugerit.java.daogen.quickstart.def.facade.EntityDocumentFacade;
+import org.fugerit.java.daogen.quickstart.def.facade.EntityPersonFacade;
 
 // custom import start ( code above here will be overwritten )
 // custom import end ( code below here will be overwritten )

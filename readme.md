@@ -6,6 +6,7 @@ Index :
 1. Run the project
 2. Configuration notes
 3. DaoGen tutorial
+4. Maven Plugin
 
 
 
@@ -137,3 +138,31 @@ Start the application and test the service :
 http://localhost:8080/fj-daogen-quickstart/jax-rs/equipment/load/id/21    
 
 
+## 4. Maven Plugin ##
+
+Since version 0.1.7 is possibile to use the maven plugin to generate code.  
+
+The activation happen with the 'fj-daogen:generate' goal :   
+
+mvn clean install fj-daogen:generate  
+
+Here is an example code :   
+
+```
+					<plugin>
+						<groupId>org.fugerit.java</groupId>
+						<artifactId>fj-daogen-maven-plugin</artifactId>
+						<configuration>
+							<daogen.config>${project.basedir}/src/main/resources/daogen/daogen-config.xml</daogen.config>
+						</configuration>						
+						<executions>
+							<execution>
+								<phase>compile</phase>
+								<goals>
+									<goal>generate</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+```
+			

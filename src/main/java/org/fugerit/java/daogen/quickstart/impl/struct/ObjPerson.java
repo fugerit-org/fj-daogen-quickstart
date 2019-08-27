@@ -2,14 +2,14 @@ package org.fugerit.java.daogen.quickstart.impl.struct;
 
 import java.sql.SQLData;
 import java.sql.SQLException;
-import java.sql.SQLOutput;
-import org.fugerit.java.daogen.quickstart.def.model.ModelPerson;
-import org.fugerit.java.daogen.quickstart.impl.helper.WrapperPerson;
 import java.sql.SQLInput;
-import org.fugerit.java.core.db.daogen.StructMapper;
-import java.util.Map;
+import java.sql.SQLOutput;
 import java.util.HashMap;
+import java.util.Map;
+import org.fugerit.java.core.db.daogen.StructMapper;
+import org.fugerit.java.daogen.quickstart.def.model.ModelPerson;
 import org.fugerit.java.daogen.quickstart.impl.helper.HelperPerson;
+import org.fugerit.java.daogen.quickstart.impl.helper.WrapperPerson;
 
 // custom import start ( code above here will be overwritten )
 // custom import end ( code below here will be overwritten )

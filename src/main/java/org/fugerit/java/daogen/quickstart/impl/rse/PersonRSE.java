@@ -1,9 +1,9 @@
 package org.fugerit.java.daogen.quickstart.impl.rse;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import org.fugerit.java.core.db.daogen.BasicRSExtractor;
 import org.fugerit.java.daogen.quickstart.def.model.ModelPerson;
-import java.sql.ResultSet;
 import org.fugerit.java.daogen.quickstart.impl.helper.HelperPerson;
 
 // custom import start ( code above here will be overwritten )

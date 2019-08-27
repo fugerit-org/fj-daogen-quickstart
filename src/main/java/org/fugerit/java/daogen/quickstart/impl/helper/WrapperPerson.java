@@ -1,7 +1,7 @@
 package org.fugerit.java.daogen.quickstart.impl.helper;
 
-import org.fugerit.java.daogen.quickstart.def.model.ModelDocument;
 import org.fugerit.java.core.db.daogen.BasicWrapper;
+import org.fugerit.java.daogen.quickstart.def.model.ModelDocument;
 import org.fugerit.java.daogen.quickstart.def.model.ModelPerson;
 
 // custom import start ( code above here will be overwritten )

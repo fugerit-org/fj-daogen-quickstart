@@ -1,9 +1,9 @@
 package org.fugerit.java.daogen.quickstart.def.facade;
 
-import org.fugerit.java.daogen.quickstart.def.model.ModelPerson;
+import org.fugerit.java.core.db.dao.DAOException;
 import org.fugerit.java.core.db.daogen.BasicDaoResult;
 import org.fugerit.java.core.db.daogen.DAOContext;
-import org.fugerit.java.core.db.dao.DAOException;
+import org.fugerit.java.daogen.quickstart.def.model.ModelPerson;
 
 // custom import start ( code above here will be overwritten )
 // custom import end ( code below here will be overwritten )

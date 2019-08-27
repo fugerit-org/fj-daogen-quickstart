@@ -9,7 +9,7 @@
 	<version>0.1-SNAPSHOT</version>
 
 	<name>fj-daogen-quickstart</name>
-	<description>git push --set-upstream origin develop</description>
+	<description>fj-daogen-quickstart</description>
 
 	<licenses>
 		<license>
@@ -25,8 +25,8 @@
 		<j2ee-version-compliance>6.0</j2ee-version-compliance>
 		<maven.compiler.source>${java-version-compliance}</maven.compiler.source>
 		<maven.compiler.target>${java-version-compliance}</maven.compiler.target>
-		<fj-version>0.5.4</fj-version>
-		<fj-daogen-version>0.1.5</fj-daogen-version>
+		<fj-version>0.5.5.1</fj-version>
+		<fj-daogen-version>0.1.7</fj-daogen-version>
 		<jersey-version>2.26-b06</jersey-version>
 		<junit-version>4.12</junit-version>
 		<hsqldb-version>2.3.4</hsqldb-version>
@@ -45,6 +45,12 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<version>3.2.3</version>
 			</plugin>
+
+			<plugin>
+				<groupId>org.fugerit.java</groupId>
+				<artifactId>fj-daogen-maven-plugin</artifactId>
+				<version>${fj-daogen-version}</version>			
+			</plugin>			
 
 		</plugins>
 
@@ -135,6 +141,52 @@
 	<url>http://www.fugerit.org/java/</url>
 
 	<profiles>
+
+		<profile>
+			<id>daogen</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.fugerit.java</groupId>
+						<artifactId>fj-daogen-maven-plugin</artifactId>
+						<configuration>
+							<daogen.config>${project.basedir}/src/main/resources/daogen/daogen-config.xml</daogen.config>
+						</configuration>						
+						<executions>
+							<execution>
+								<phase>compile</phase>
+								<goals>
+									<goal>generate</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+		<profile>
+			<id>daogendump</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.fugerit.java</groupId>
+						<artifactId>fj-daogen-maven-plugin</artifactId>
+						<configuration>
+							<daogen.config.dump>${project.basedir}/target/daogen-config-dump.xml</daogen.config.dump>
+						</configuration>						
+						<executions>
+							<execution>
+								<phase>compile</phase>
+								<goals>
+									<goal>dump</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
 
 		<profile>
 			<id>full</id>
