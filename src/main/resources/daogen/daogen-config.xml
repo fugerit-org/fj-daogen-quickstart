@@ -7,6 +7,7 @@
 	src-test-java="src/test/java"
 	src-main-resources="src/main/resources"
 	src-test-resources="src/test/resources"
+	src-doc-openapi="src/main/doc/openapi_rest"
 	class-config="cl://config/daogen_default_class_config.xml"
 	type-mapper="org.fugerit.java.daogen.base.config.DaogenTypeMapper"
 	type-map-config="cl://config/daogen_default_type_mapping.xml"
@@ -25,6 +26,8 @@
 	factory-def="org.fugerit.java.daogen.quickstart.def.facade.QuickstartLogicFacade"
 	factory-data-impl="org.fugerit.java.daogen.quickstart.impl.facade.data.QuickstartDataLogicFacade"
 	default-sequence="quickstart_id"
+	openapi_host="localhost:8080"
+	openapi_path="/fj-daogen-quickstart/jax-rs"
 	>
 	
   <relation comment="Relation to mother" 

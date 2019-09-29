@@ -1,0 +1,59 @@
+swagger: '2.0'
+info:
+  description: 'Comments : Example table 01 - If possible avoid multiple filed and/or dates in primary key'
+  title: 'OpenAPI load specification for PUBLIC.DAOGEN_QUICKSTART.EXAMPLE_01'
+  version: '1.0.0'
+host: localhost:8080
+schemes:
+  - http
+basePath: /fj-daogen-quickstart/jax-rs/example01/load
+paths:
+  /field1/{field1}/field2/{field2}:
+    get:
+      summary: Get PUBLIC.DAOGEN_QUICKSTART.EXAMPLE_01 by primary key
+      parameters:
+        - in: path
+          name: field1
+          required: true
+          type: string
+          description: Value of field FIELD1
+        - in: path
+          name: field2
+          required: true
+          type: string
+          description: Value of field FIELD2
+      responses:
+        '200':
+          description: Success response
+          schema:
+            type: object
+            properties:
+              field1:
+                type: string
+                example: ''
+              field2:
+                type: string
+                example: ''
+              field3:
+                type: string
+                example: ''
+  /all:
+    get:
+      summary: Get all PUBLIC.DAOGEN_QUICKSTART.EXAMPLE_01
+      responses:
+        '200':
+          description: Success response
+          schema:
+              type: array
+              items: 
+                type: object
+                properties:
+                  field1:
+                    type: string
+                    example: ''
+                  field2:
+                    type: string
+                    example: ''
+                  field3:
+                    type: string
+                    example: ''

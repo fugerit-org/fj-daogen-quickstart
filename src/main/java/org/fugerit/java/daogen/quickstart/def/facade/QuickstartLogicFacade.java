@@ -2,6 +2,7 @@ package org.fugerit.java.daogen.quickstart.def.facade;
 
 import org.fugerit.java.core.db.dao.DAOException;
 import org.fugerit.java.daogen.quickstart.def.facade.EntityDocumentFacade;
+import org.fugerit.java.daogen.quickstart.def.facade.EntityExample01Facade;
 import org.fugerit.java.daogen.quickstart.def.facade.EntityPersonFacade;
 
 // custom import start ( code above here will be overwritten )
@@ -30,6 +31,14 @@ public interface QuickstartLogicFacade {
 	 * @throws DAOException	in case of problems
 	 */
 	EntityDocumentFacade getEntityDocumentFacade() throws DAOException;
+
+	/**
+	 * Facade incapsulating persistance for entity : EXAMPLE_01
+	 *
+	 * @return	the facade
+	 * @throws DAOException	in case of problems
+	 */
+	EntityExample01Facade getEntityExample01Facade() throws DAOException;
 
 	/**
 	 * Facade incapsulating persistance for entity : PERSON

@@ -1,0 +1,84 @@
+swagger: '2.0'
+info:
+  description: 'Comments : Documents meta informations'
+  title: 'OpenAPI load specification for PUBLIC.DAOGEN_QUICKSTART.DOCUMENT'
+  version: '1.0.0'
+host: localhost:8080
+schemes:
+  - http
+basePath: /fj-daogen-quickstart/jax-rs/document/load
+paths:
+  /id/{id}:
+    get:
+      summary: Get PUBLIC.DAOGEN_QUICKSTART.DOCUMENT by primary key
+      parameters:
+        - in: path
+          name: id
+          required: true
+          type: string
+          description: Value of field ID
+      responses:
+        '200':
+          description: Success response
+          schema:
+            type: object
+            properties:
+              id:
+                type: string
+                example: ''
+              id_owner:
+                type: string
+                example: ''
+              id_creator:
+                type: string
+                example: ''
+              creation_date:
+                type: string
+                example: ''
+              update_date:
+                type: string
+                example: ''
+              path:
+                type: string
+                example: ''
+              state:
+                type: string
+                example: ''
+              info:
+                type: string
+                example: ''
+  /all:
+    get:
+      summary: Get all PUBLIC.DAOGEN_QUICKSTART.DOCUMENT
+      responses:
+        '200':
+          description: Success response
+          schema:
+              type: array
+              items: 
+                type: object
+                properties:
+                  id:
+                    type: string
+                    example: ''
+                  id_owner:
+                    type: string
+                    example: ''
+                  id_creator:
+                    type: string
+                    example: ''
+                  creation_date:
+                    type: string
+                    example: ''
+                  update_date:
+                    type: string
+                    example: ''
+                  path:
+                    type: string
+                    example: ''
+                  state:
+                    type: string
+                    example: ''
+                  info:
+                    type: string
+                    example: ''

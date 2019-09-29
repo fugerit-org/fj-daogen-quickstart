@@ -1,0 +1,78 @@
+swagger: '2.0'
+info:
+  description: 'Comments : People data'
+  title: 'OpenAPI load specification for PUBLIC.DAOGEN_QUICKSTART.PERSON'
+  version: '1.0.0'
+host: localhost:8080
+schemes:
+  - http
+basePath: /fj-daogen-quickstart/jax-rs/person/load
+paths:
+  /id/{id}:
+    get:
+      summary: Get PUBLIC.DAOGEN_QUICKSTART.PERSON by primary key
+      parameters:
+        - in: path
+          name: id
+          required: true
+          type: string
+          description: Value of field ID
+      responses:
+        '200':
+          description: Success response
+          schema:
+            type: object
+            properties:
+              id:
+                type: string
+                example: ''
+              surname:
+                type: string
+                example: ''
+              name:
+                type: string
+                example: ''
+              birth_date:
+                type: string
+                example: ''
+              note:
+                type: string
+                example: ''
+              id_mother:
+                type: string
+                example: ''
+              id_father:
+                type: string
+                example: ''
+  /all:
+    get:
+      summary: Get all PUBLIC.DAOGEN_QUICKSTART.PERSON
+      responses:
+        '200':
+          description: Success response
+          schema:
+              type: array
+              items: 
+                type: object
+                properties:
+                  id:
+                    type: string
+                    example: ''
+                  surname:
+                    type: string
+                    example: ''
+                  name:
+                    type: string
+                    example: ''
+                  birth_date:
+                    type: string
+                    example: ''
+                  note:
+                    type: string
+                    example: ''
+                  id_mother:
+                    type: string
+                    example: ''
+                  id_father:
+                    type: string
+                    example: ''

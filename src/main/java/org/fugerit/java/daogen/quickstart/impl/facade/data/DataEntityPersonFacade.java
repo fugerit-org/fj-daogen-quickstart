@@ -71,6 +71,7 @@ public class DataEntityPersonFacade extends BasicDataFacade<ModelPerson> impleme
 			query.andEqualParam( COL_ID_FATHER, model.getIdFather() );
 		}
 		daoHelper.loadAllHelper( result.getList(), query, this.getRse() ); 
+		result.evaluateResultFromList(); 
 		return result;
 	}
 

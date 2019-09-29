@@ -73,6 +73,7 @@ public class DataEntityDocumentFacade extends BasicDataFacade<ModelDocument> imp
 			query.andEqualParam( COL_INFO, model.getInfo() );
 		}
 		daoHelper.loadAllHelper( result.getList(), query, this.getRse() ); 
+		result.evaluateResultFromList(); 
 		return result;
 	}
 
