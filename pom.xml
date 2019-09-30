@@ -6,7 +6,7 @@
 	<groupId>org.fugerit.java</groupId>
 	<artifactId>fj-daogen-quickstart</artifactId>
 	<packaging>war</packaging>
-	<version>0.3-SNAPSHOT</version>
+	<version>0.3.1</version>
 
 	<name>fj-daogen-quickstart</name>
 	<description>fj-daogen-quickstart</description>
