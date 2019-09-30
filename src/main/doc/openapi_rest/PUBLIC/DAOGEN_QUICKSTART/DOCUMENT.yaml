@@ -1,84 +1,66 @@
-swagger: '2.0'
+openapi: 3.0.0
 info:
+  title: OpenAPI load specification for PUBLIC.DAOGEN_QUICKSTART.DOCUMENT'
   description: 'Comments : Documents meta informations'
-  title: 'OpenAPI load specification for PUBLIC.DAOGEN_QUICKSTART.DOCUMENT'
   version: '1.0.0'
-host: localhost:8080
-schemes:
-  - http
-basePath: /fj-daogen-quickstart/jax-rs/document/load
+servers:
+  - url: http://localhost:8080/fj-daogen-quickstart/jax-rs/document/load
+    description: Local Development server
 paths:
   /id/{id}:
     get:
       summary: Get PUBLIC.DAOGEN_QUICKSTART.DOCUMENT by primary key
       parameters:
-        - in: path
-          name: id
+        - name: id
+          in: path
           required: true
-          type: string
           description: Value of field ID
+          schema:
+            type: string
       responses:
         '200':
           description: Success response
-          schema:
-            type: object
-            properties:
-              id:
-                type: string
-                example: ''
-              id_owner:
-                type: string
-                example: ''
-              id_creator:
-                type: string
-                example: ''
-              creation_date:
-                type: string
-                example: ''
-              update_date:
-                type: string
-                example: ''
-              path:
-                type: string
-                example: ''
-              state:
-                type: string
-                example: ''
-              info:
-                type: string
-                example: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Document'
   /all:
     get:
       summary: Get all PUBLIC.DAOGEN_QUICKSTART.DOCUMENT
       responses:
         '200':
           description: Success response
-          schema:
-              type: array
-              items: 
-                type: object
-                properties:
-                  id:
-                    type: string
-                    example: ''
-                  id_owner:
-                    type: string
-                    example: ''
-                  id_creator:
-                    type: string
-                    example: ''
-                  creation_date:
-                    type: string
-                    example: ''
-                  update_date:
-                    type: string
-                    example: ''
-                  path:
-                    type: string
-                    example: ''
-                  state:
-                    type: string
-                    example: ''
-                  info:
-                    type: string
-                    example: ''
+          content:
+            application/json:
+              schema:
+                  type: array
+                  items: 
+                    $ref: '#/components/schemas/Document'
+components: 
+  schemas: 
+    Document: 
+      properties:
+        id:
+          type: string
+          example: ''
+        id_owner:
+          type: string
+          example: ''
+        id_creator:
+          type: string
+          example: ''
+        creation_date:
+          type: string
+          example: ''
+        update_date:
+          type: string
+          example: ''
+        path:
+          type: string
+          example: ''
+        state:
+          type: string
+          example: ''
+        info:
+          type: string
+          example: ''
