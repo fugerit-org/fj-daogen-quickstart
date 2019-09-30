@@ -8,6 +8,7 @@
 	src-main-resources="src/main/resources"
 	src-test-resources="src/test/resources"
 	src-doc-openapi="src/main/doc/openapi_rest"
+	relations-last="true"
 	class-config="cl://config/daogen_default_class_config.xml"
 	type-mapper="org.fugerit.java.daogen.base.config.DaogenTypeMapper"
 	type-map-config="cl://config/daogen_default_type_mapping.xml"

@@ -36,40 +36,6 @@ public class WrapperPerson extends BasicWrapper<ModelPerson> implements ModelPer
 	}
 
 	/*
-	 * fields generated for relations 
-	 */
-
-	@Override
-	public void setMother( ModelPerson value ) {
-		this.unwrapModel().setMother( value );
-	}
-
-	@Override
-	public ModelPerson getMother() {
-		return this.unwrapModel().getMother();
-	}
-
-	@Override
-	public void setFather( ModelPerson value ) {
-		this.unwrapModel().setFather( value );
-	}
-
-	@Override
-	public ModelPerson getFather() {
-		return this.unwrapModel().getFather();
-	}
-
-	@Override
-	public void setOwndocuments( java.util.List<ModelDocument> value ) {
-		this.unwrapModel().setOwndocuments( value );
-	}
-
-	@Override
-	public java.util.List<ModelDocument> getOwndocuments() {
-		return this.unwrapModel().getOwndocuments();
-	}
-
-	/*
 	 * fields generated for entity attributes 
 	 */
 	@Override
@@ -140,6 +106,40 @@ public class WrapperPerson extends BasicWrapper<ModelPerson> implements ModelPer
 	@Override
 	public java.math.BigDecimal getIdFather() {
 		return this.unwrapModel().getIdFather();
+	}
+
+	/*
+	 * fields generated for relations 
+	 */
+
+	@Override
+	public void setMother( ModelPerson value ) {
+		this.unwrapModel().setMother( value );
+	}
+
+	@Override
+	public ModelPerson getMother() {
+		return this.unwrapModel().getMother();
+	}
+
+	@Override
+	public void setFather( ModelPerson value ) {
+		this.unwrapModel().setFather( value );
+	}
+
+	@Override
+	public ModelPerson getFather() {
+		return this.unwrapModel().getFather();
+	}
+
+	@Override
+	public void setOwndocuments( java.util.List<ModelDocument> value ) {
+		this.unwrapModel().setOwndocuments( value );
+	}
+
+	@Override
+	public java.util.List<ModelDocument> getOwndocuments() {
+		return this.unwrapModel().getOwndocuments();
 	}
 
 }

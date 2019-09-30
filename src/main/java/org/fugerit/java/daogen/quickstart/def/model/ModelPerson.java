@@ -18,60 +18,6 @@ public interface ModelPerson {
 	// custom code end ( code below here will be overwritten )
 
 	/**
-	 * Getter method for property : Mother (nullable: yes)
-	 *
-	 * relation to entity : PERSON
-	 *
-	 * @return the value of Mother
-	 */
-	ModelPerson getMother();
-
-	/**
-	 * Setter method for property : Mother (nullable: yes)
-	 *
-	 * relation to entity : PERSON
-	 *
-	 * @param value the value of Mother
-	 */
-	void setMother( ModelPerson value );
-
-	/**
-	 * Getter method for property : Father (nullable: yes)
-	 *
-	 * relation to entity : PERSON
-	 *
-	 * @return the value of Father
-	 */
-	ModelPerson getFather();
-
-	/**
-	 * Setter method for property : Father (nullable: yes)
-	 *
-	 * relation to entity : PERSON
-	 *
-	 * @param value the value of Father
-	 */
-	void setFather( ModelPerson value );
-
-	/**
-	 * Getter method for property : Owndocuments (nullable: yes)
-	 *
-	 * relation to entity : DOCUMENT
-	 *
-	 * @return the value of Owndocuments
-	 */
-	java.util.List<ModelDocument> getOwndocuments();
-
-	/**
-	 * Setter method for property : Owndocuments (nullable: yes)
-	 *
-	 * relation to entity : DOCUMENT
-	 *
-	 * @param value the value of Owndocuments
-	 */
-	void setOwndocuments( java.util.List<ModelDocument> value );
-
-	/**
 	 * Getter method for property : id (nullable: no)
 	 *
 	 * Person id
@@ -196,5 +142,59 @@ public interface ModelPerson {
 	 * @param value the value of idFather
 	 */
 	void setIdFather( java.math.BigDecimal value );
+
+	/**
+	 * Getter method for property : Mother (nullable: yes)
+	 *
+	 * relation to entity : PERSON
+	 *
+	 * @return the value of Mother
+	 */
+	ModelPerson getMother();
+
+	/**
+	 * Setter method for property : Mother (nullable: yes)
+	 *
+	 * relation to entity : PERSON
+	 *
+	 * @param value the value of Mother
+	 */
+	void setMother( ModelPerson value );
+
+	/**
+	 * Getter method for property : Father (nullable: yes)
+	 *
+	 * relation to entity : PERSON
+	 *
+	 * @return the value of Father
+	 */
+	ModelPerson getFather();
+
+	/**
+	 * Setter method for property : Father (nullable: yes)
+	 *
+	 * relation to entity : PERSON
+	 *
+	 * @param value the value of Father
+	 */
+	void setFather( ModelPerson value );
+
+	/**
+	 * Getter method for property : Owndocuments (nullable: yes)
+	 *
+	 * relation to entity : DOCUMENT
+	 *
+	 * @return the value of Owndocuments
+	 */
+	java.util.List<ModelDocument> getOwndocuments();
+
+	/**
+	 * Setter method for property : Owndocuments (nullable: yes)
+	 *
+	 * relation to entity : DOCUMENT
+	 *
+	 * @param value the value of Owndocuments
+	 */
+	void setOwndocuments( java.util.List<ModelDocument> value );
 
 }

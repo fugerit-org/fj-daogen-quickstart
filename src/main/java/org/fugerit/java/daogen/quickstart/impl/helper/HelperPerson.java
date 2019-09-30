@@ -24,46 +24,6 @@ public class HelperPerson extends BasicHelper implements ModelPerson {
 	private static final long serialVersionUID = 15367710913L;
 
 	/*
-	 * fields generated for relations 
-	 */
-
-	private ModelPerson Mother;
-
-	@Override
-	public void setMother( ModelPerson value ) {
-		this.Mother = value;
-	}
-
-	@Override
-	public ModelPerson getMother() {
-		return this.Mother;
-	}
-
-	private ModelPerson Father;
-
-	@Override
-	public void setFather( ModelPerson value ) {
-		this.Father = value;
-	}
-
-	@Override
-	public ModelPerson getFather() {
-		return this.Father;
-	}
-
-	private java.util.List<ModelDocument> Owndocuments;
-
-	@Override
-	public void setOwndocuments( java.util.List<ModelDocument> value ) {
-		this.Owndocuments = value;
-	}
-
-	@Override
-	public java.util.List<ModelDocument> getOwndocuments() {
-		return this.Owndocuments;
-	}
-
-	/*
 	 * fields generated for entity attributes 
 	 */
 	private java.math.BigDecimal id;
@@ -148,6 +108,46 @@ public class HelperPerson extends BasicHelper implements ModelPerson {
 	@Override
 	public java.math.BigDecimal getIdFather() {
 		return this.idFather;
+	}
+
+	/*
+	 * fields generated for relations 
+	 */
+
+	private ModelPerson Mother;
+
+	@Override
+	public void setMother( ModelPerson value ) {
+		this.Mother = value;
+	}
+
+	@Override
+	public ModelPerson getMother() {
+		return this.Mother;
+	}
+
+	private ModelPerson Father;
+
+	@Override
+	public void setFather( ModelPerson value ) {
+		this.Father = value;
+	}
+
+	@Override
+	public ModelPerson getFather() {
+		return this.Father;
+	}
+
+	private java.util.List<ModelDocument> Owndocuments;
+
+	@Override
+	public void setOwndocuments( java.util.List<ModelDocument> value ) {
+		this.Owndocuments = value;
+	}
+
+	@Override
+	public java.util.List<ModelDocument> getOwndocuments() {
+		return this.Owndocuments;
 	}
 
 	@Override
