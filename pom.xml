@@ -34,6 +34,7 @@
 		<poi-version>4.1.0</poi-version>
 		<dbcp-version>1.4</dbcp-version>
 		<log4j-version>1.2.17</log4j-version>
+		<maven-build-helper>3.0.0</maven-build-helper>
 	</properties>
 
 	<build>
@@ -44,13 +45,44 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
 				<version>3.2.3</version>
-			</plugin>
+			</plugin>			
 
 			<plugin>
 				<groupId>org.fugerit.java</groupId>
 				<artifactId>fj-daogen-maven-plugin</artifactId>
-				<version>${fj-daogen-version}</version>			
-			</plugin>			
+				<version>${fj-daogen-version}</version>	
+				<configuration>
+					<daogen.config>${project.basedir}/src/main/resources/daogen/daogen-config.xml</daogen.config>
+				</configuration>						
+				<executions>
+					<execution>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+			        <artifactId>build-helper-maven-plugin</artifactId>
+			        <version>${maven-build-helper}</version>	
+			        <executions>
+					<execution>
+						<id>add-source</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>add-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>${project.build.directory}/generated-sources/daogen/</source>
+							</sources>
+						</configuration>
+					</execution>
+			        </executions>
+			</plugin>
 
 		</plugins>
 

@@ -1,3 +1,6 @@
+<!--
+
+-->
 <daogen-config
 	base-src-folder="../fj-daogen-quickstart"
 	database-type="hsqldb"
@@ -8,7 +11,8 @@
 	src-main-resources="src/main/resources"
 	src-test-resources="src/test/resources"
 	src-doc-openapi="src/main/doc/openapi_rest"
-	src-helpers="SRC-MAIN-JAVA"
+	src-helpers1="SRC-MAIN-JAVA"	
+	src-helpers="SRC-TARGET"
 	relations-last="true"
 	class-config="cl://config/daogen_default_class_config.xml"
 	type-mapper="org.fugerit.java.daogen.base.config.DaogenTypeMapper"
