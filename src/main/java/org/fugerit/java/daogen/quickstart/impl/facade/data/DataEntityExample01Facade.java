@@ -1,18 +1,6 @@
 package org.fugerit.java.daogen.quickstart.impl.facade.data;
 
-import org.fugerit.java.core.db.dao.DAOException;
-import org.fugerit.java.core.db.daogen.BasicDAOHelper;
-import org.fugerit.java.core.db.daogen.BasicDaoResult;
-import org.fugerit.java.core.db.daogen.BasicDataFacade;
-import org.fugerit.java.core.db.daogen.DAOContext;
-import org.fugerit.java.core.db.daogen.DeleteHelper;
-import org.fugerit.java.core.db.daogen.InsertHelper;
-import org.fugerit.java.core.db.daogen.SelectHelper;
-import org.fugerit.java.core.db.daogen.UpdateHelper;
 import org.fugerit.java.daogen.quickstart.def.facade.EntityExample01Facade;
-import org.fugerit.java.daogen.quickstart.def.facade.Example01Finder;
-import org.fugerit.java.daogen.quickstart.def.model.ModelExample01;
-import org.fugerit.java.daogen.quickstart.impl.rse.Example01RSE;
 
 // custom import start ( code above here will be overwritten )
 // custom import end ( code below here will be overwritten )
@@ -26,93 +14,12 @@ import org.fugerit.java.daogen.quickstart.impl.rse.Example01RSE;
  * // custom code start ( code above here will be overwritten )
  * // custom code end ( code below here will be overwritten )
  */
-public class DataEntityExample01Facade extends BasicDataFacade<ModelExample01> implements EntityExample01Facade {
+public class DataEntityExample01Facade extends DataEntityExample01FacadeHelper implements EntityExample01Facade {
 
 	// custom code start ( code above here will be overwritten )
 	// custom code end ( code below here will be overwritten )
 
 	private static final long serialVersionUID = 698614211492L;
 
-	public DataEntityExample01Facade() {
-		super( "PUBLIC.DAOGEN_QUICKSTART.EXAMPLE_01", Example01RSE.DEFAULT );
-	}
-
- 	public final static String SEQUENCE_NAME = "quickstart_id";
-
- 	@Override
- 	public String getSequenceName() {
- 		return SEQUENCE_NAME;
- 	}
-
- 	public final static String COL_FIELD1 = "FIELD1";
- 	public final static String COL_FIELD2 = "FIELD2";
- 	public final static String COL_FIELD3 = "FIELD3";
-
-	/* loadAll( context ) is inherited from BasicDataFacade */
-
-	@Override
-	public BasicDaoResult<ModelExample01> loadAllByFinder( DAOContext context, Example01Finder finder ) throws DAOException {
-		BasicDaoResult<ModelExample01> result = new BasicDaoResult<>();
-		BasicDAOHelper<ModelExample01> daoHelper = new BasicDAOHelper<>( context );
-		SelectHelper query = daoHelper.newSelectHelper( this.getTableName() );
-		if ( finder.getModel() != null ) {
-			ModelExample01 model = finder.getModel();
-			query.andEqualParam( COL_FIELD1, model.getField1() );
-			query.andEqualParam( COL_FIELD2, model.getField2() );
-			query.andEqualParam( COL_FIELD3, model.getField3() );
-		}
-		daoHelper.loadAllHelper( result.getList(), query, this.getRse() ); 
-		result.evaluateResultFromList(); 
-		return result;
-	}
-
-	@Override
-	public BasicDaoResult<ModelExample01> create( DAOContext context, ModelExample01 model ) throws DAOException {
-		BasicDaoResult<ModelExample01> result = new BasicDaoResult<>();
-		BasicDAOHelper<ModelExample01> daoHelper = new BasicDAOHelper<>( context );
-		InsertHelper query = daoHelper.newInsertHelper( this.getTableName() );
-		query.addParam( COL_FIELD1, model.getField1() );
-		query.addParam( COL_FIELD2, model.getField2() );
-		query.addParam( COL_FIELD3, model.getField3() );
-		int res = daoHelper.update( query );
-		this.evaluteSqlUpdateResult(res, model, result);
-		return result;
-	}
-
-	@Override
-	public ModelExample01 loadById( DAOContext context, java.lang.String field1, java.util.Date field2 ) throws DAOException {
-		ModelExample01 result = null;
-		BasicDAOHelper<ModelExample01> daoHelper = new BasicDAOHelper<>( context );
-		SelectHelper query = daoHelper.newSelectHelper( this.getTableName() );
-		query.andEqualParam( COL_FIELD1, field1 );
-		query.andEqualParam( COL_FIELD2, field2 );
-		result = daoHelper.loadOneHelper( query, this.getRse() );
-		return result;
-	}
-
-	@Override
-	public BasicDaoResult<ModelExample01> deleteById( DAOContext context, java.lang.String field1, java.util.Date field2 ) throws DAOException {
-		BasicDaoResult<ModelExample01> result = new BasicDaoResult<>();
-		BasicDAOHelper<ModelExample01> daoHelper = new BasicDAOHelper<>( context );
-		DeleteHelper query = daoHelper.newDeleteHelper( this.getTableName() );
-		query.andWhereParam( COL_FIELD1, field1 );
-		query.andWhereParam( COL_FIELD2, field2 );
-		int res = daoHelper.update( query );
-		this.evaluteSqlUpdateResult(res, null, result);
-		return result;
-	}
-
-	@Override
-	public BasicDaoResult<ModelExample01> updateById( DAOContext context, ModelExample01 model ) throws DAOException {
-		BasicDaoResult<ModelExample01> result = new BasicDaoResult<>();
-		BasicDAOHelper<ModelExample01> daoHelper = new BasicDAOHelper<>( context );
-		UpdateHelper query = daoHelper.newUpdateHelper( this.getTableName() );
-		query.addSetParam( COL_FIELD3, model.getField3() );
-		query.andWhereParam( COL_FIELD1, model.getField1() );
-		query.andWhereParam( COL_FIELD2, model.getField2() );
-		int res = daoHelper.update( query );
-		this.evaluteSqlUpdateResult(res, model, result);
-		return result;
-	}
-
+	// [HELPER/IMPL MODEL] this class is a stub and can be modified as you see fit (it will not been overwritten)
 }

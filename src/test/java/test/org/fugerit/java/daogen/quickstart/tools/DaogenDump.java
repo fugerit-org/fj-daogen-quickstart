@@ -25,7 +25,9 @@ public class DaogenDump {
 				params.setProperty( DaogenConfigDump.PARAM_SCHEMA , "DAOGEN_QUICKSTART" );
 				List<String> tnl = new ArrayList<String>();
 				tnl.add( "*" );
-				DaogenConfigDump.dumpConfig( cf , params, writer, tnl );
+				Properties mapTables = new Properties();
+				mapTables.setProperty( "SAMPLE_MAP_TABLE" , "MAPPED_TABLE" );
+				DaogenConfigDump.dumpConfig( cf , params, writer, tnl, mapTables );
 				logger.info( "OUTPUT > \n"+writer.toString() );
 			}
 			logger.info( "daogen dump end!" );

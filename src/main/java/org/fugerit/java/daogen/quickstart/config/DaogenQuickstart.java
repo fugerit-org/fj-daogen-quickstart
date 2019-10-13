@@ -9,6 +9,7 @@ public class DaogenQuickstart extends javax.ws.rs.core.Application {
 		      Set<Class<?>> s = new HashSet<Class<?>>();
 		      s.add(org.fugerit.java.daogen.quickstart.impl.rest.load.LoadPerson.class);
 		      s.add(org.fugerit.java.daogen.quickstart.impl.rest.load.LoadDocument.class);
+		      s.add(org.fugerit.java.daogen.quickstart.impl.rest.load.LoadMappedTable.class);
 		      return s;
 		}
 	

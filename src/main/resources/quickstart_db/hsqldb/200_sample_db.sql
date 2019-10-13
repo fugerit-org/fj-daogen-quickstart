@@ -52,3 +52,16 @@ COMMENT ON COLUMN daogen_quickstart.document.state IS 'Document state';
 
 INSERT INTO daogen_quickstart.document VALUES ( 10, 3, 1, '2019-01-01', '2019-01-02', 'Silmarillion', 1, 'TEST' );
 
+
+CREATE TABLE daogen_quickstart.sample_map_table (
+	id BIGINT NOT NULL,
+	content VARCHAR(16) NOT NULL
+);
+
+ALTER TABLE daogen_quickstart.sample_map_table ADD CONSTRAINT sample_map_table_pk PRIMARY KEY ( id );
+
+COMMENT ON TABLE daogen_quickstart.sample_map_table IS 'Sample table mapped with different name';
+COMMENT ON COLUMN daogen_quickstart.sample_map_table.id IS 'Record id';
+COMMENT ON COLUMN daogen_quickstart.sample_map_table.content IS 'Record content';
+
+INSERT INTO daogen_quickstart.sample_map_table VALUES ( 1, 'Mapped table' ); 

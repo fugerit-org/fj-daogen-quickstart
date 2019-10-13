@@ -8,6 +8,7 @@
 	src-main-resources="src/main/resources"
 	src-test-resources="src/test/resources"
 	src-doc-openapi="src/main/doc/openapi_rest"
+	src-helpers="SRC-MAIN-JAVA"
 	relations-last="true"
 	class-config="cl://config/daogen_default_class_config.xml"
 	type-mapper="org.fugerit.java.daogen.base.config.DaogenTypeMapper"
@@ -75,5 +76,10 @@
     <field comments="Second field of the primary key" id="FIELD2" javaType="java.sql.Date" nullable="no" size="0" sqlType="91" sqlTypeName="DATE"/>
     <field comments="Unlinked third field" id="FIELD3" javaType="java.lang.String" nullable="yes" size="256" sqlType="12" sqlTypeName="VARCHAR"/>
   </entity>  
+	
+  <entity catalog="PUBLIC" comments="Sample table mapped with different name" id="PUBLIC.DAOGEN_QUICKSTART.MAPPED_TABLE" mapToTable="SAMPLE_MAP_TABLE" name="MAPPED_TABLE" primaryKey="ID" schema="DAOGEN_QUICKSTART">
+    <field comments="Record id" id="ID" javaType="java.lang.Long" nullable="no" size="0" sqlType="-5" sqlTypeName="BIGINT"/>
+    <field comments="Record content" id="CONTENT" javaType="java.lang.String" nullable="no" size="16" sqlType="12" sqlTypeName="VARCHAR"/>
+  </entity>
 	
 </daogen-config>
