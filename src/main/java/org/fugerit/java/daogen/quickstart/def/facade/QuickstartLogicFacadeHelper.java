@@ -23,7 +23,7 @@ public interface QuickstartLogicFacadeHelper {
 	// custom code start ( code above here will be overwritten )
 	// custom code end ( code below here will be overwritten )
 
-	public static final String ATT_NAME = "org.fugerit.java.daogen.quickstart.def.facade";
+	public static final String ATT_NAME = "QuickstartLogicFacadeHelper";
 
 	/**
 	 * Facade incapsulating persistance for entity : DOCUMENT
