@@ -1,4 +1,4 @@
-# DaoGen Quickstart #  
+# Mars - Fugerit DAOGEN A.P.I. Quickstart  
 
 Sample applications to lear usage of DaoGen framework.  
 
