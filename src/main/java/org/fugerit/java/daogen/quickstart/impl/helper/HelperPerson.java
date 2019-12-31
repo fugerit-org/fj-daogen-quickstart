@@ -114,40 +114,40 @@ public class HelperPerson extends BasicHelper implements ModelPerson {
 	 * fields generated for relations 
 	 */
 
-	private ModelPerson Mother;
+	private ModelPerson mother;
 
 	@Override
 	public void setMother( ModelPerson value ) {
-		this.Mother = value;
+		this.mother = value;
 	}
 
 	@Override
 	public ModelPerson getMother() {
-		return this.Mother;
+		return this.mother;
 	}
 
-	private ModelPerson Father;
+	private ModelPerson father;
 
 	@Override
 	public void setFather( ModelPerson value ) {
-		this.Father = value;
+		this.father = value;
 	}
 
 	@Override
 	public ModelPerson getFather() {
-		return this.Father;
+		return this.father;
 	}
 
-	private java.util.List<ModelDocument> Owndocuments;
+	private java.util.List<ModelDocument> owndocuments;
 
 	@Override
 	public void setOwndocuments( java.util.List<ModelDocument> value ) {
-		this.Owndocuments = value;
+		this.owndocuments = value;
 	}
 
 	@Override
 	public java.util.List<ModelDocument> getOwndocuments() {
-		return this.Owndocuments;
+		return this.owndocuments;
 	}
 
 	@Override

@@ -49,15 +49,15 @@ components:
         name:
           type: string
           example: ''
-        birth_date:
+        birthDate:
           type: string
           example: ''
         note:
           type: string
           example: ''
-        id_mother:
+        idMother:
           type: string
           example: ''
-        id_father:
+        idFather:
           type: string
           example: ''

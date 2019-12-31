@@ -43,16 +43,16 @@ components:
         id:
           type: string
           example: ''
-        id_owner:
+        idOwner:
           type: string
           example: ''
-        id_creator:
+        idCreator:
           type: string
           example: ''
-        creation_date:
+        creationDate:
           type: string
           example: ''
-        update_date:
+        updateDate:
           type: string
           example: ''
         path:

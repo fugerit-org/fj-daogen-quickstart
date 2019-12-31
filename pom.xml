@@ -25,8 +25,8 @@
 		<j2ee-version-compliance>6.0</j2ee-version-compliance>
 		<maven.compiler.source>${java-version-compliance}</maven.compiler.source>
 		<maven.compiler.target>${java-version-compliance}</maven.compiler.target>
-		<fj-version>0.6.4.3</fj-version>
-		<fj-daogen-version>0.3.4</fj-daogen-version>
+		<fj-version>0.6.5.9</fj-version>
+		<fj-daogen-version>0.3.4.5</fj-daogen-version>
 		<jersey-version>2.26-b06</jersey-version>
 		<junit-version>4.12</junit-version>
 		<hsqldb-version>2.3.4</hsqldb-version>
@@ -141,6 +141,91 @@
 	<url>http://www.fugerit.org/java/</url>
 
 	<profiles>
+
+		<profile>
+			<id>wlp</id>
+			
+			<properties>
+				<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+				<war-name>${project.artifactId}-${project.version}</war-name>
+				<war-folder>${project.build.directory}/${war-name}</war-folder>
+				<wlp-version>19.0.0.12</wlp-version>
+				<wlp-maven-version>3.0.M1</wlp-maven-version>
+				<packaging.type>minify,runnable</packaging.type>
+				<freemarker-maven-plugin-version>1.0.3</freemarker-maven-plugin-version>
+			</properties>			
+			
+			<build>
+				<plugins>
+
+					 <plugin>
+				        <groupId>org.fugerit.java</groupId>
+				        <artifactId>freemarker-maven-plugin</artifactId>
+				        <version>${freemarker-maven-plugin-version}</version>
+				        <configuration>
+				          <!-- Required. Specifies the compatibility version for template processing -->
+				          <freeMarkerVersion>2.3.23</freeMarkerVersion>
+				        </configuration>
+				        <executions>
+				          <!-- If you want to generate files during other phases, just add more execution
+				               tags and specify appropriate phase, sourceDirectory and outputDirectory values.
+				          -->
+				          <execution>
+				            <id>freemarker</id>
+				            <!-- Optional, defaults to generate-sources -->
+				            <phase>generate-sources</phase>
+				            <goals>
+				              <!-- Required, must be generate -->
+				              <goal>generate</goal>
+				            </goals>
+				            <configuration>
+				              <!-- Optional, defaults to src/main/freemarker -->
+				              <sourceDirectory>src/main/freemarker</sourceDirectory>
+				              <!-- Optional, defaults to src/main/freemarker/template -->
+				              <templateDirectory>src/main/freemarker/template</templateDirectory>
+				              <!-- Optional, defaults to src/main/freemarker/generator -->
+				              <generatorDirectory>src/main/freemarker/generator</generatorDirectory>
+				              <!-- Optional, defaults to target/generated-sources/freemarker -->
+				              <outputDirectory>target/generated-sources/freemarker</outputDirectory>
+				            </configuration>
+				          </execution>
+				        </executions>
+				      </plugin>
+		
+		            <plugin>
+		                <groupId>net.wasdev.wlp.maven.plugins</groupId>
+		                <artifactId>liberty-maven-plugin</artifactId>
+		                <version>${wlp-maven-version}</version>
+		                <configuration>
+		                    <assemblyArtifact>
+		                        <groupId>com.ibm.websphere.appserver.runtime</groupId>
+		                        <artifactId>wlp-webProfile7</artifactId>
+		                        <version>${wlp-version}</version>
+		                        <type>zip</type>
+		                    </assemblyArtifact>
+		                    <serverName>${project.artifactId}Server</serverName>
+		                    <configFile>target/generated-sources/freemarker/server.xml</configFile>
+		                    <include>${packaging.type}</include>
+		                </configuration>
+		            </plugin>
+		            
+		            <plugin>
+		                <groupId>org.apache.maven.plugins</groupId>
+		                <artifactId>maven-failsafe-plugin</artifactId>
+		                <version>2.19.1</version>
+		                <executions>
+		                    <execution>
+		                        <goals>
+		                            <goal>integration-test</goal>
+		                            <goal>verify</goal>
+		                        </goals>
+		                    </execution>
+		                </executions>
+		            </plugin>
+
+				</plugins>
+			</build>
+		</profile>
 
 		<profile>
 			<id>daogen</id>
