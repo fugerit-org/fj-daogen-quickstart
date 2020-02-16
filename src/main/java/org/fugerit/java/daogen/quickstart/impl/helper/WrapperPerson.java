@@ -142,4 +142,9 @@ public class WrapperPerson extends BasicWrapper<ModelPerson> implements ModelPer
 		return this.unwrapModel().getOwndocuments();
 	}
 
+	@Override
+	public boolean isEmpty() {
+		return this.unwrapModel().isEmpty();
+	}
+
 }

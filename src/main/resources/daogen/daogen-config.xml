@@ -30,6 +30,7 @@
 	default-sequence="quickstart_id"
 	openapi_host="http://localhost:8080"
 	openapi_path="/fj-daogen-quickstart/jax-rs"
+	check-empty-interface="1" 
 	>
 	
   <relation comment="Relation to mother" 

@@ -67,4 +67,9 @@ public class WrapperExample01 extends BasicWrapper<ModelExample01> implements Mo
 		return this.unwrapModel().getField3();
 	}
 
+	@Override
+	public boolean isEmpty() {
+		return this.unwrapModel().isEmpty();
+	}
+
 }

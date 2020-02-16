@@ -34,7 +34,7 @@ public class DataEntityMappedTableFacadeHelper extends BasicDataFacade<ModelMapp
 	private static final long serialVersionUID = 222193553767L;
 
 	public DataEntityMappedTableFacadeHelper() {
-		super( "PUBLIC.DAOGEN_QUICKSTART.SAMPLE_MAP_TABLE", MappedTableRSE.DEFAULT );
+		super( "PUBLIC.DAOGEN_QUICKSTART.SAMPLE_MAP_TABLE", MappedTableRSE.DEFAULT, null );
 	}
 
  	public final static String SEQUENCE_NAME = "quickstart_id";
@@ -53,7 +53,7 @@ public class DataEntityMappedTableFacadeHelper extends BasicDataFacade<ModelMapp
 	public BasicDaoResult<ModelMappedTable> loadAllByFinder( DAOContext context, MappedTableFinder finder ) throws DAOException {
 		BasicDaoResult<ModelMappedTable> result = new BasicDaoResult<>();
 		BasicDAOHelper<ModelMappedTable> daoHelper = new BasicDAOHelper<>( context );
-		SelectHelper query = daoHelper.newSelectHelper( this.getTableName() );
+		SelectHelper query = daoHelper.newSelectHelper( this.getQueryView(), this.getTableName() );
 		query.andEqualParam( COL_ID, finder.getId() );
 		if ( finder.getModel() != null ) {
 			ModelMappedTable model = finder.getModel();
@@ -84,7 +84,7 @@ public class DataEntityMappedTableFacadeHelper extends BasicDataFacade<ModelMapp
 	public ModelMappedTable loadById( DAOContext context, java.math.BigDecimal id ) throws DAOException {
 		ModelMappedTable result = null;
 		BasicDAOHelper<ModelMappedTable> daoHelper = new BasicDAOHelper<>( context );
-		SelectHelper query = daoHelper.newSelectHelper( this.getTableName() );
+		SelectHelper query = daoHelper.newSelectHelper( this.getQueryView(), this.getTableName() );
 		query.andEqualParam( COL_ID, id );
 		result = daoHelper.loadOneHelper( query, this.getRse() );
 		return result;

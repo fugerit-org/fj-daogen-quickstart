@@ -75,4 +75,11 @@ public class HelperExample01 extends BasicHelper implements ModelExample01 {
 		return buffer.toString();
 	}
 
+	@Override
+	public boolean isEmpty() {
+		return  ( org.fugerit.java.core.lang.compare.CheckEmptyHelper.isEmpty( this.getField1() ) )
+		 &&  ( org.fugerit.java.core.lang.compare.CheckEmptyHelper.isEmpty( this.getField2() ) )
+		 &&  ( org.fugerit.java.core.lang.compare.CheckEmptyHelper.isEmpty( this.getField3() ) );
+	}
+
 }

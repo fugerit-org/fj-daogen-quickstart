@@ -145,4 +145,16 @@ public class HelperDocument extends BasicHelper implements ModelDocument {
 		return buffer.toString();
 	}
 
+	@Override
+	public boolean isEmpty() {
+		return  ( org.fugerit.java.core.lang.compare.CheckEmptyHelper.isEmpty( this.getId() ) )
+		 &&  ( org.fugerit.java.core.lang.compare.CheckEmptyHelper.isEmpty( this.getIdOwner() ) )
+		 &&  ( org.fugerit.java.core.lang.compare.CheckEmptyHelper.isEmpty( this.getIdCreator() ) )
+		 &&  ( org.fugerit.java.core.lang.compare.CheckEmptyHelper.isEmpty( this.getCreationDate() ) )
+		 &&  ( org.fugerit.java.core.lang.compare.CheckEmptyHelper.isEmpty( this.getUpdateDate() ) )
+		 &&  ( org.fugerit.java.core.lang.compare.CheckEmptyHelper.isEmpty( this.getPath() ) )
+		 &&  ( org.fugerit.java.core.lang.compare.CheckEmptyHelper.isEmpty( this.getState() ) )
+		 &&  ( org.fugerit.java.core.lang.compare.CheckEmptyHelper.isEmpty( this.getInfo() ) );
+	}
+
 }

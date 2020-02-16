@@ -172,4 +172,15 @@ public class HelperPerson extends BasicHelper implements ModelPerson {
 		return buffer.toString();
 	}
 
+	@Override
+	public boolean isEmpty() {
+		return  ( org.fugerit.java.core.lang.compare.CheckEmptyHelper.isEmpty( this.getId() ) )
+		 &&  ( org.fugerit.java.core.lang.compare.CheckEmptyHelper.isEmpty( this.getSurname() ) )
+		 &&  ( org.fugerit.java.core.lang.compare.CheckEmptyHelper.isEmpty( this.getName() ) )
+		 &&  ( org.fugerit.java.core.lang.compare.CheckEmptyHelper.isEmpty( this.getBirthDate() ) )
+		 &&  ( org.fugerit.java.core.lang.compare.CheckEmptyHelper.isEmpty( this.getNote() ) )
+		 &&  ( org.fugerit.java.core.lang.compare.CheckEmptyHelper.isEmpty( this.getIdMother() ) )
+		 &&  ( org.fugerit.java.core.lang.compare.CheckEmptyHelper.isEmpty( this.getIdFather() ) );
+	}
+
 }

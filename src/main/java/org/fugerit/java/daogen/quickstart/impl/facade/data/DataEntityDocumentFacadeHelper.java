@@ -34,7 +34,7 @@ public class DataEntityDocumentFacadeHelper extends BasicDataFacade<ModelDocumen
 	private static final long serialVersionUID = 204370159319L;
 
 	public DataEntityDocumentFacadeHelper() {
-		super( "PUBLIC.DAOGEN_QUICKSTART.DOCUMENT", DocumentRSE.DEFAULT );
+		super( "PUBLIC.DAOGEN_QUICKSTART.DOCUMENT", DocumentRSE.DEFAULT, null );
 	}
 
  	public final static String SEQUENCE_NAME = "quickstart_id";
@@ -59,7 +59,7 @@ public class DataEntityDocumentFacadeHelper extends BasicDataFacade<ModelDocumen
 	public BasicDaoResult<ModelDocument> loadAllByFinder( DAOContext context, DocumentFinder finder ) throws DAOException {
 		BasicDaoResult<ModelDocument> result = new BasicDaoResult<>();
 		BasicDAOHelper<ModelDocument> daoHelper = new BasicDAOHelper<>( context );
-		SelectHelper query = daoHelper.newSelectHelper( this.getTableName() );
+		SelectHelper query = daoHelper.newSelectHelper( this.getQueryView(), this.getTableName() );
 		query.andEqualParam( COL_ID, finder.getId() );
 		if ( finder.getModel() != null ) {
 			ModelDocument model = finder.getModel();
@@ -102,7 +102,7 @@ public class DataEntityDocumentFacadeHelper extends BasicDataFacade<ModelDocumen
 	public ModelDocument loadById( DAOContext context, java.math.BigDecimal id ) throws DAOException {
 		ModelDocument result = null;
 		BasicDAOHelper<ModelDocument> daoHelper = new BasicDAOHelper<>( context );
-		SelectHelper query = daoHelper.newSelectHelper( this.getTableName() );
+		SelectHelper query = daoHelper.newSelectHelper( this.getQueryView(), this.getTableName() );
 		query.andEqualParam( COL_ID, id );
 		result = daoHelper.loadOneHelper( query, this.getRse() );
 		return result;

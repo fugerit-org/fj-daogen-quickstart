@@ -57,4 +57,9 @@ public class WrapperMappedTable extends BasicWrapper<ModelMappedTable> implement
 		return this.unwrapModel().getContent();
 	}
 
+	@Override
+	public boolean isEmpty() {
+		return this.unwrapModel().isEmpty();
+	}
+
 }

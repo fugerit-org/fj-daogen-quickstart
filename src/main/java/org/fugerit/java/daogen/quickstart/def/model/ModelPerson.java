@@ -12,7 +12,7 @@ package org.fugerit.java.daogen.quickstart.def.model;
  * // custom code start ( code above here will be overwritten )
  * // custom code end ( code below here will be overwritten )
  */
-public interface ModelPerson {
+public interface ModelPerson extends org.fugerit.java.core.lang.compare.CheckEmpty {
 
 	// custom code start ( code above here will be overwritten )
 	// custom code end ( code below here will be overwritten )

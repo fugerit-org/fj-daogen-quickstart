@@ -34,7 +34,7 @@ public class DataEntityPersonFacadeHelper extends BasicDataFacade<ModelPerson> i
 	private static final long serialVersionUID = 725013410722L;
 
 	public DataEntityPersonFacadeHelper() {
-		super( "PUBLIC.DAOGEN_QUICKSTART.PERSON", PersonRSE.DEFAULT );
+		super( "PUBLIC.DAOGEN_QUICKSTART.PERSON", PersonRSE.DEFAULT, null );
 	}
 
  	public final static String SEQUENCE_NAME = "quickstart_id";
@@ -58,7 +58,7 @@ public class DataEntityPersonFacadeHelper extends BasicDataFacade<ModelPerson> i
 	public BasicDaoResult<ModelPerson> loadAllByFinder( DAOContext context, PersonFinder finder ) throws DAOException {
 		BasicDaoResult<ModelPerson> result = new BasicDaoResult<>();
 		BasicDAOHelper<ModelPerson> daoHelper = new BasicDAOHelper<>( context );
-		SelectHelper query = daoHelper.newSelectHelper( this.getTableName() );
+		SelectHelper query = daoHelper.newSelectHelper( this.getQueryView(), this.getTableName() );
 		query.andEqualParam( COL_ID, finder.getId() );
 		if ( finder.getModel() != null ) {
 			ModelPerson model = finder.getModel();
@@ -99,7 +99,7 @@ public class DataEntityPersonFacadeHelper extends BasicDataFacade<ModelPerson> i
 	public ModelPerson loadById( DAOContext context, java.math.BigDecimal id ) throws DAOException {
 		ModelPerson result = null;
 		BasicDAOHelper<ModelPerson> daoHelper = new BasicDAOHelper<>( context );
-		SelectHelper query = daoHelper.newSelectHelper( this.getTableName() );
+		SelectHelper query = daoHelper.newSelectHelper( this.getQueryView(), this.getTableName() );
 		query.andEqualParam( COL_ID, id );
 		result = daoHelper.loadOneHelper( query, this.getRse() );
 		return result;

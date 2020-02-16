@@ -117,4 +117,9 @@ public class WrapperDocument extends BasicWrapper<ModelDocument> implements Mode
 		return this.unwrapModel().getInfo();
 	}
 
+	@Override
+	public boolean isEmpty() {
+		return this.unwrapModel().isEmpty();
+	}
+
 }

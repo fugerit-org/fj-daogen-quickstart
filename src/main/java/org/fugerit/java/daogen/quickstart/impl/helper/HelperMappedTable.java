@@ -61,4 +61,10 @@ public class HelperMappedTable extends BasicHelper implements ModelMappedTable {
 		return buffer.toString();
 	}
 
+	@Override
+	public boolean isEmpty() {
+		return  ( org.fugerit.java.core.lang.compare.CheckEmptyHelper.isEmpty( this.getId() ) )
+		 &&  ( org.fugerit.java.core.lang.compare.CheckEmptyHelper.isEmpty( this.getContent() ) );
+	}
+
 }
