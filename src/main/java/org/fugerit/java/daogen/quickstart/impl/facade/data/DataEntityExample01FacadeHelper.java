@@ -33,8 +33,10 @@ public class DataEntityExample01FacadeHelper extends BasicDataFacade<ModelExampl
 
 	private static final long serialVersionUID = 341387990861L;
 
+	private final static String TABLE_NAME = "PUBLIC.DAOGEN_QUICKSTART.EXAMPLE_01";
+
 	public DataEntityExample01FacadeHelper() {
-		super( "PUBLIC.DAOGEN_QUICKSTART.EXAMPLE_01", Example01RSE.DEFAULT, null );
+		super( TABLE_NAME, Example01RSE.DEFAULT, null );
 	}
 
  	public final static String SEQUENCE_NAME = "quickstart_id";

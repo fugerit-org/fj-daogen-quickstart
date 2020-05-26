@@ -33,8 +33,10 @@ public class DataEntityPersonFacadeHelper extends BasicDataFacade<ModelPerson> i
 
 	private static final long serialVersionUID = 725013410722L;
 
+	private final static String TABLE_NAME = "PUBLIC.DAOGEN_QUICKSTART.PERSON";
+
 	public DataEntityPersonFacadeHelper() {
-		super( "PUBLIC.DAOGEN_QUICKSTART.PERSON", PersonRSE.DEFAULT, null );
+		super( TABLE_NAME, PersonRSE.DEFAULT, null );
 	}
 
  	public final static String SEQUENCE_NAME = "quickstart_id";

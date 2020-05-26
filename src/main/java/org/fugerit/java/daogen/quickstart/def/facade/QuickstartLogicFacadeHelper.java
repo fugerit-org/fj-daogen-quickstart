@@ -1,10 +1,6 @@
 package org.fugerit.java.daogen.quickstart.def.facade;
 
 import org.fugerit.java.core.db.dao.DAOException;
-import org.fugerit.java.daogen.quickstart.def.facade.EntityDocumentFacade;
-import org.fugerit.java.daogen.quickstart.def.facade.EntityExample01Facade;
-import org.fugerit.java.daogen.quickstart.def.facade.EntityMappedTableFacade;
-import org.fugerit.java.daogen.quickstart.def.facade.EntityPersonFacade;
 
 // custom import start ( code above here will be overwritten )
 // custom import end ( code below here will be overwritten )
@@ -31,7 +27,7 @@ public interface QuickstartLogicFacadeHelper {
 	 * @return	the facade
 	 * @throws DAOException	in case of problems
 	 */
-	EntityDocumentFacade getEntityDocumentFacade() throws DAOException;
+	org.fugerit.java.daogen.quickstart.def.facade.EntityDocumentFacade getEntityDocumentFacade() throws DAOException;
 
 	/**
 	 * Facade incapsulating persistance for entity : EXAMPLE_01
@@ -39,7 +35,7 @@ public interface QuickstartLogicFacadeHelper {
 	 * @return	the facade
 	 * @throws DAOException	in case of problems
 	 */
-	EntityExample01Facade getEntityExample01Facade() throws DAOException;
+	org.fugerit.java.daogen.quickstart.def.facade.EntityExample01Facade getEntityExample01Facade() throws DAOException;
 
 	/**
 	 * Facade incapsulating persistance for entity : MAPPED_TABLE
@@ -47,7 +43,7 @@ public interface QuickstartLogicFacadeHelper {
 	 * @return	the facade
 	 * @throws DAOException	in case of problems
 	 */
-	EntityMappedTableFacade getEntityMappedTableFacade() throws DAOException;
+	org.fugerit.java.daogen.quickstart.def.facade.EntityMappedTableFacade getEntityMappedTableFacade() throws DAOException;
 
 	/**
 	 * Facade incapsulating persistance for entity : PERSON
@@ -55,6 +51,6 @@ public interface QuickstartLogicFacadeHelper {
 	 * @return	the facade
 	 * @throws DAOException	in case of problems
 	 */
-	EntityPersonFacade getEntityPersonFacade() throws DAOException;
+	org.fugerit.java.daogen.quickstart.def.facade.EntityPersonFacade getEntityPersonFacade() throws DAOException;
 
 }

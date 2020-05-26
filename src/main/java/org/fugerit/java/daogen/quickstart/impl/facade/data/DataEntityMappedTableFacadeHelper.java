@@ -33,8 +33,10 @@ public class DataEntityMappedTableFacadeHelper extends BasicDataFacade<ModelMapp
 
 	private static final long serialVersionUID = 222193553767L;
 
+	private final static String TABLE_NAME = "PUBLIC.DAOGEN_QUICKSTART.SAMPLE_MAP_TABLE";
+
 	public DataEntityMappedTableFacadeHelper() {
-		super( "PUBLIC.DAOGEN_QUICKSTART.SAMPLE_MAP_TABLE", MappedTableRSE.DEFAULT, null );
+		super( TABLE_NAME, MappedTableRSE.DEFAULT, null );
 	}
 
  	public final static String SEQUENCE_NAME = "quickstart_id";

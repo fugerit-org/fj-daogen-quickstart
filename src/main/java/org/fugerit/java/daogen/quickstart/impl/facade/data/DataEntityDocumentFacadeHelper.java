@@ -33,8 +33,10 @@ public class DataEntityDocumentFacadeHelper extends BasicDataFacade<ModelDocumen
 
 	private static final long serialVersionUID = 204370159319L;
 
+	private final static String TABLE_NAME = "PUBLIC.DAOGEN_QUICKSTART.DOCUMENT";
+
 	public DataEntityDocumentFacadeHelper() {
-		super( "PUBLIC.DAOGEN_QUICKSTART.DOCUMENT", DocumentRSE.DEFAULT, null );
+		super( TABLE_NAME, DocumentRSE.DEFAULT, null );
 	}
 
  	public final static String SEQUENCE_NAME = "quickstart_id";
