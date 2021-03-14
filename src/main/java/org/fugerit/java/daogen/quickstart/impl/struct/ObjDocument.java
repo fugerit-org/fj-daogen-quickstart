@@ -6,6 +6,7 @@ import java.sql.SQLInput;
 import java.sql.SQLOutput;
 import java.util.HashMap;
 import java.util.Map;
+
 import org.fugerit.java.core.db.daogen.StructMapper;
 import org.fugerit.java.daogen.quickstart.def.model.ModelDocument;
 import org.fugerit.java.daogen.quickstart.impl.helper.HelperDocument;
@@ -40,6 +41,8 @@ public class ObjDocument extends WrapperDocument implements SQLData, StructMappe
 
 	public final static String SQL_TYPE_NAME = "OBJ_DOCUMENT";
 
+	public final static ObjDocument MAPPER = new ObjDocument();
+
 	@Override
 	public Map<String, Class<?>> newTypeMapper() throws SQLException {
 		Map<String, Class<?>> map = new HashMap<String, Class<?>>();
@@ -62,6 +65,51 @@ public class ObjDocument extends WrapperDocument implements SQLData, StructMappe
 		return res;
 	}
 
+	private transient java.sql.Clob infoClob;
+
+	public void setInfoClob( java.sql.Clob value ) {
+		this.infoClob = value;
+	}
+
+	public java.sql.Clob getInfoClob() {
+		return this.infoClob;
+	}
+
+	private boolean areLobsSet = false;
+
+	protected boolean checkLobs() {
+		// lobs must be set, or lobs properties must be null for writeSQL() to work
+		boolean check = this.areLobsSet;
+		if ( !check ) {
+			check = (this.getInfo() == null);
+		}
+		return check;
+	}
+
+	public void setupLobs( java.sql.Connection conn ) throws SQLException {
+		setInfoClob( org.fugerit.java.core.db.daogen.LobHelper.createClob( conn, getInfo() ) );
+		this.areLobsSet = true;
+	}
+
+	public static ObjDocument wrap( ModelDocument model, java.sql.Connection conn ) throws SQLException {
+		ObjDocument res = wrap( model );
+		if ( res != null ) {
+			res.setupLobs( conn );
+		}
+		return res;
+	}
+
+	public static ObjDocument[] wrap( ModelDocument[] list, java.sql.Connection conn ) throws SQLException {
+		ObjDocument[] res = null;
+		if ( list != null ) {
+			res = new ObjDocument[ list.length ];
+			for ( int k=0; k<list.length; k++ ) {
+				res[k] = wrap( list[k], conn );
+			}
+		}
+		return res;
+	}
+
 	@Override
 	public void readSQL(SQLInput stream, String typeName) throws SQLException {
 		this.setId( stream.readBigDecimal() );
@@ -76,7 +124,10 @@ public class ObjDocument extends WrapperDocument implements SQLData, StructMappe
 
 	@Override
 	public void writeSQL(SQLOutput stream) throws SQLException {
-		throwUnsupported( "Method writeSQL() not implemented for "+this.getSQLTypeName() );
+		if ( !this.checkLobs() ) {
+			throwUnsupported( "To use writeSQL() you must invoke setupLobs() for  "+this.getSQLTypeName() );
+		}
+		this.areLobsSet = false;	// clob and blob will be used only once
 		stream.writeBigDecimal( this.getId() );
 		stream.writeBigDecimal( this.getIdOwner() );
 		stream.writeBigDecimal( this.getIdCreator() );
@@ -84,7 +135,7 @@ public class ObjDocument extends WrapperDocument implements SQLData, StructMappe
 		stream.writeTimestamp( org.fugerit.java.core.db.daogen.SQLTypeConverter.utilDateToSqlTimestamp( this.getUpdateDate() ) );
 		stream.writeString( this.getPath() );
 		stream.writeBigDecimal( this.getState() );
-		// clob must be writtern separately : this.getInfo();
+		stream.writeClob( this.getInfoClob() );
 	}
 
 }

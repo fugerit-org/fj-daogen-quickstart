@@ -6,6 +6,7 @@ import java.sql.SQLInput;
 import java.sql.SQLOutput;
 import java.util.HashMap;
 import java.util.Map;
+
 import org.fugerit.java.core.db.daogen.StructMapper;
 import org.fugerit.java.daogen.quickstart.def.model.ModelExample01;
 import org.fugerit.java.daogen.quickstart.impl.helper.HelperExample01;
@@ -39,6 +40,8 @@ public class ObjExample01 extends WrapperExample01 implements SQLData, StructMap
 	}
 
 	public final static String SQL_TYPE_NAME = "OBJ_EXAMPLE_01";
+
+	public final static ObjExample01 MAPPER = new ObjExample01();
 
 	@Override
 	public Map<String, Class<?>> newTypeMapper() throws SQLException {
