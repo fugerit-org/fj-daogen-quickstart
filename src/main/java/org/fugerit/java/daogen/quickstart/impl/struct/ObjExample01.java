@@ -6,7 +6,6 @@ import java.sql.SQLInput;
 import java.sql.SQLOutput;
 import java.util.HashMap;
 import java.util.Map;
-
 import org.fugerit.java.core.db.daogen.StructMapper;
 import org.fugerit.java.daogen.quickstart.def.model.ModelExample01;
 import org.fugerit.java.daogen.quickstart.impl.helper.HelperExample01;
