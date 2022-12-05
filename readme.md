@@ -2,20 +2,18 @@
 
 Refer to [changelog](changelog.md) for feature update.
 
-Sample applications to lear usage of DaoGen framework.  
+Sample applications to learn usage of DaoGen framework.  
 
 Index : 
 1. Run the project
 2. Configuration notes
 3. DaoGen tutorial
-4. Maven Plugin
-5. Support for websphere liberty
-
 
 ## 1. Run the project ##
 
-1. Add to a server (tested with tomcat9 / jdk9).  
-2. Open one of the rest URL http://localhost:8080/fj-daogen-quickstart/jax-rs/person/load/deep/id/3  
+1. Minimum java 17 is required
+2. mvn spring-boot:run
+3. Open one of the rest URL http://localhost:8080/fj-daogen-quickstart/jax-rs/person/load/deep/id/3  
 
 NOTE: index page fj-daogen-quickstart contains a few api links  
 
@@ -138,52 +136,3 @@ public class DaogenQuickstart extends javax.ws.rs.core.Application {
 Start the application and test the service :   
 
 http://localhost:8080/fj-daogen-quickstart/jax-rs/equipment/load/id/21    
-
-
-## 4. Maven Plugin ##
-
-Since version 0.1.7 is possibile to use the maven plugin to generate code.  
-
-The activation happen with the 'fj-daogen:generate' goal :   
-
-mvn clean install fj-daogen:generate  
-
-Here is an example code :   
-
-```
-					<plugin>
-						<groupId>org.fugerit.java</groupId>
-						<artifactId>fj-daogen-maven-plugin</artifactId>
-						<configuration>
-							<daogen.config>${project.basedir}/src/main/resources/daogen/daogen-config.xml</daogen.config>
-						</configuration>						
-						<executions>
-							<execution>
-								<phase>compile</phase>
-								<goals>
-									<goal>generate</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-```
-			
-			
-## 5. Support for websphere liberty ##
-
-Is now possibile to run the quickstart on a standalone websphere liberty application server, activating the profile 'wlp'
-
-To start the server : 
-`mvn clean install liberty:run -P wlp`
-
-To stop the server
-`mvn liberty:stop -P wlp`
-
-After starting the server, you can access the webapp at link [http://localhost:8080/fj-daogen-quickstart/](http://localhost:8080/fj-daogen-quickstart/)
-
-The template for this profile is based on the sample websphere liberty project : 
-[websphere liberty profile sample project](https://gitlab.com/fugerit-org/fj-sample-wlp)
-
-The server configuration template is here : [src/main/freemarker/template/server_ftl.xml](src/main/freemarker/template/server_ftl.xml)  
-
-NOTE: the template has been configured to use port 8080.
