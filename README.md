@@ -1,6 +1,6 @@
 # Mars - Fugerit DAOGEN A.P.I. Quickstart  
 
-Refer to [changelog](changelog.md) for feature update.
+Refer to [CHANGELOG.md](CHANGELOG.md) for feature update.
 
 Sample applications to learn usage of DaoGen framework.  
 
@@ -135,4 +135,5 @@ public class DaogenQuickstart extends javax.ws.rs.core.Application {
 
 Start the application and test the service :   
 
-http://localhost:8080/fj-daogen-quickstart/jax-rs/equipment/load/id/21    
+http://localhost:8080/fj-daogen-quickstart/
+

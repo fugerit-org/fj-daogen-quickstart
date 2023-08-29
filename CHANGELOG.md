@@ -1,5 +1,10 @@
 # Changelog for project fj-daogen-quickstart
 
+## version 1.1.4- 2023-08-29
+* Changed fj-daogen-version to 1.1.4
+* Changed spring boot version to 3.1.3
+* Changed packaging type from war to default (jar)
+
 ## version 0.4.4 - 2022-12-05
 * Now the quickstart run on spring boot only
 * Removed websphere liberty support

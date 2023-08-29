@@ -1,0 +1,7 @@
+server:
+  servlet:
+    context-path: /fj-daogen-quickstart
+
+spring:
+  jackson:
+    date-format: yyyy-MM-dd
