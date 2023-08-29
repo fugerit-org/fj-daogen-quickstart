@@ -38,9 +38,9 @@ public class ObjMappedTable extends WrapperMappedTable implements SQLData, Struc
 		this( new HelperMappedTable() );
 	}
 
-	public final static String SQL_TYPE_NAME = "OBJ_MAPPED_TABLE";
+	public static final String SQL_TYPE_NAME = "OBJ_MAPPED_TABLE";
 
-	public final static ObjMappedTable MAPPER = new ObjMappedTable();
+	public static final ObjMappedTable MAPPER = new ObjMappedTable();
 
 	@Override
 	public Map<String, Class<?>> newTypeMapper() throws SQLException {

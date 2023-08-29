@@ -63,11 +63,13 @@
 					<generatedSourceHelper>${generated.source.daogen}</generatedSourceHelper>
 				</configuration>
 				<dependencies>
+					<!-- add this dependency to run in legacy mode 
 				    <dependency>
 				        <groupId>org.fugerit.java.legacy</groupId>
 				        <artifactId>fj-daogen-legacy-v0-4-4</artifactId>
 				        <version>${fj-daogen-legagy-version}</version>
-				    </dependency>					
+				    </dependency>
+				    -->					
 				</dependencies>
 			</plugin>
 			

@@ -38,9 +38,9 @@ public class ObjDocument extends WrapperDocument implements SQLData, StructMappe
 		this( new HelperDocument() );
 	}
 
-	public final static String SQL_TYPE_NAME = "OBJ_DOCUMENT";
+	public static final String SQL_TYPE_NAME = "OBJ_DOCUMENT";
 
-	public final static ObjDocument MAPPER = new ObjDocument();
+	public static final ObjDocument MAPPER = new ObjDocument();
 
 	@Override
 	public Map<String, Class<?>> newTypeMapper() throws SQLException {

@@ -38,9 +38,9 @@ public class ObjPerson extends WrapperPerson implements SQLData, StructMapper {
 		this( new HelperPerson() );
 	}
 
-	public final static String SQL_TYPE_NAME = "OBJ_PERSON";
+	public static final String SQL_TYPE_NAME = "OBJ_PERSON";
 
-	public final static ObjPerson MAPPER = new ObjPerson();
+	public static final ObjPerson MAPPER = new ObjPerson();
 
 	@Override
 	public Map<String, Class<?>> newTypeMapper() throws SQLException {
