@@ -5,7 +5,7 @@
 
 	<groupId>org.fugerit.java</groupId>
 	<artifactId>fj-daogen-quickstart</artifactId>
-	<version>0.4.4</version>
+	<version>1.1.5</version>
 
 	<name>fj-daogen-quickstart</name>
 	<description>fj-daogen-quickstart</description>
@@ -24,25 +24,44 @@
 		<j2ee-version-compliance>7.0</j2ee-version-compliance>
 		<maven.compiler.source>${java-version-compliance}</maven.compiler.source>
 		<maven.compiler.target>${java-version-compliance}</maven.compiler.target>
-		<fj-version>0.8.3</fj-version>
+		<fj-version>8.2.0</fj-version>
 		<fj-daogen-version>${project.version}</fj-daogen-version>
 		<sb-version>3.1.3</sb-version>
+		<!-- daogen maven plugin configuration -->
+		<gen.base.dir>${project.basedir}</gen.base.dir>
+		<generated.source.daogen>target/generated-sources/daogen</generated.source.daogen>		
 	</properties>
 
 	<build>
 
 		<plugins>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>3.2.3</version>
-			</plugin>
-
+			
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<version>${sb-version}</version>
+			</plugin>
+
+			<plugin>
+				<groupId>org.fugerit.java</groupId>
+				<artifactId>fj-daogen-maven-plugin</artifactId>
+				<version>${fj-daogen-version}</version>
+				<executions>
+					<execution>
+						<id>daogen</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<daogenConfig>${project.basedir}/src/main/daogen/daogen-config.xml</daogenConfig>
+					<genBaseDir>${gen.base.dir}</genBaseDir>
+					<!--
+					<generatedSourceHelper>${generated.source.daogen}</generatedSourceHelper>
+					-->
+				</configuration>
 			</plugin>
 
 		</plugins>
@@ -85,7 +104,7 @@
 			<groupId>org.fugerit.java</groupId>
 			<artifactId>fj-daogen-base</artifactId>
 			<version>${fj-daogen-version}</version>
-			<scope>provided</scope>
+			<scope>test</scope>
 		</dependency>
 
 		<dependency>

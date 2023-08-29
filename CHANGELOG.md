@@ -1,9 +1,11 @@
 # Changelog for project fj-daogen-quickstart
 
-## version 1.1.4- 2023-08-29
-* Changed fj-daogen-version to 1.1.4
+## version 1.1.5- 2023-08-29
+* Changed fj-daogen-version to 1.1.5
+* Changed fj-version to 8.2.0
 * Changed spring boot version to 3.1.3
 * Changed packaging type from war to default (jar)
+* Added fj-daogen-maven-plugin configuration
 
 ## version 0.4.4 - 2022-12-05
 * Now the quickstart run on spring boot only
