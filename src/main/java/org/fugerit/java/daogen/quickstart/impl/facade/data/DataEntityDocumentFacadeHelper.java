@@ -105,7 +105,11 @@ public class DataEntityDocumentFacadeHelper extends BasicDataFacade<ModelDocumen
 		ModelDocument result = null;
 		BasicDAOHelper<ModelDocument> daoHelper = new BasicDAOHelper<>( context );
 		SelectHelper query = daoHelper.newSelectHelper( this.getQueryView(), this.getTableName() );
-		query.andEqualParam( COL_ID, id );
+		if ( id == null  ) { 
+			 throw new DAOException( "Null parameter in key java.math.BigDecimal id" );
+		} else { 
+			query.andEqualParam( COL_ID, id );
+		}
 		result = daoHelper.loadOneHelper( query, this.getRse() );
 		return result;
 	}

@@ -86,8 +86,12 @@ public class DataEntityExample01FacadeHelper extends BasicDataFacade<ModelExampl
 		ModelExample01 result = null;
 		BasicDAOHelper<ModelExample01> daoHelper = new BasicDAOHelper<>( context );
 		SelectHelper query = daoHelper.newSelectHelper( this.getQueryView(), this.getTableName() );
-		query.andEqualParam( COL_FIELD1, field1 );
-		query.andEqualParam( COL_FIELD2, field2 );
+		if ( field1 == null  || field2 == null  ) { 
+			 throw new DAOException( "Null parameter in key java.lang.String field1, java.util.Date field2" );
+		} else { 
+			query.andEqualParam( COL_FIELD1, field1 );
+			query.andEqualParam( COL_FIELD2, field2 );
+		}
 		result = daoHelper.loadOneHelper( query, this.getRse() );
 		return result;
 	}
