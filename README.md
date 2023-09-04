@@ -16,6 +16,10 @@ Index :
 2. mvn spring-boot:run
 3. Open one of the rest URL http://localhost:8080/fj-daogen-quickstart/jax-rs/person/load/deep/id/3  
 
+Tested with :
+* Amazon Corretto 17.07.7.1
+* Maven 3.9.0
+
 NOTE: index page fj-daogen-quickstart contains a few api links  
 
 
@@ -45,7 +49,7 @@ They are all set for this project, but you need to update some of them if you ne
 Quick tutorial to add one entity to the project.  
 All the files of this tutorial are, as an example, in folder src/test/resources/tutorial  
 
-*3.1 Add entity configuration script*
+### 3.1 Add entity configuration script
 
 For instance we will add an equipment table (src/main/resources/quickstart_db/hsqldb/300_equipment.sql) :   
 
@@ -77,7 +81,7 @@ INSERT INTO daogen_quickstart.equipment VALUES ( 21, 2, 3, '2019-03-01', '2019-0
 INSERT INTO daogen_quickstart.equipment VALUES ( 22, 3, 3, '2019-03-01', '2019-03-02', 'First Silmaril', 1 );
 ```
 
-*3.2 Dump the configuration*
+### 3.2 Dump the configuration
 
 Run the main class src/main/test : 
 
@@ -98,21 +102,33 @@ This will dump the configuration, you can then copy paste from output the config
 ```
 
 
-*3.3 Code generation*
+### 3.3 Code generation
 
-Run the main class src/test/java :
+Update the file [daogen-config.xml](src/main/daogen/daogen-config.xml), then run : 
 
-`test.org.fugerit.java.daogen.quickstart.tools.DaogenRun`
+`mvn fj-daogen:generate`
 
-This will create all the files in the correct packages (es. ModelEquipment the model interface, LoadEquiment the REST service stup, and so on)  
+to regenerate the resources. (see the [fj-daogen-maven-plugin](https://docs.fugerit.org/data/java/site/fj-daogen-maven-plugin/generate-mojo.html) reference and [documentation](https://marsdocs.fugerit.org/src/docs/maven-plugin/generate.html) for more information)
+
+For example, if this test link is accessed : 
+
+`http://localhost:8080/fj-daogen-quickstart/jax-rs/person/load/id/3`
+
+output will be : 
+
+`{"id":3,"surname":"Noldor","name":"Feanor","birthDate":"1999-12-31","note":"Great smith","idMother":1,"idFather":2,"mother":null,"father":null,"owndocuments":null,"empty":false}`
+
+If the line 67 is removed : 
+
+`<field comments="Notes on persone" id="NOTE" javaType="java.lang.String" nullable="no" size="256" sqlType="12" sqlTypeName="VARCHAR"/>`
+
+The new output will be :
 
 
-package org.fugerit.java.daogen.quickstart.config;
+`{"id":3,"surname":"Noldor","name":"Feanor","birthDate":"1999-12-31","idMother":1,"idFather":2,"mother":null,"father":null,"owndocuments":null,"empty":false}`
 
-import java.util.HashSet;
-import java.util.Set;
 
-*3.4 Add rest service configuration*
+### 3.4 Add rest service configuration
 
 Add the newly built REST service LoadEquipment to jaxrs application : 
 
@@ -132,9 +148,8 @@ public class DaogenQuickstart extends javax.ws.rs.core.Application {
 }
 ```
 
-*3.5 Test result*  
+### 3.5 Test result
 
 Start the application and test the service :   
 
-http://localhost:8080/fj-daogen-quickstart/
-
+[test page](http://localhost:8080/fj-daogen-quickstart/)
