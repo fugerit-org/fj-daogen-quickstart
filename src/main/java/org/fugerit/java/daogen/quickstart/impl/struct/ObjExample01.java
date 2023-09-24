@@ -44,7 +44,7 @@ public class ObjExample01 extends WrapperExample01 implements SQLData, StructMap
 
 	@Override
 	public Map<String, Class<?>> newTypeMapper() throws SQLException {
-		Map<String, Class<?>> map = new HashMap<String, Class<?>>();
+		Map<String, Class<?>> map = new HashMap<>();
 		map.put( SQL_TYPE_NAME, ObjExample01.class );
 		return map;
 	}

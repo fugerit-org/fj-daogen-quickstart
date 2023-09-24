@@ -29,7 +29,7 @@ public class WrapperPerson extends BasicWrapper<ModelPerson> implements ModelPer
 
 	public ModelPerson unwrap( WrapperPerson wrapper ) {
 		ModelPerson res = wrapper;
-		while ( res != null && res instanceof WrapperPerson ) { 
+		while ( res instanceof WrapperPerson ) { 
 			res = ((WrapperPerson)res).unwrapModel();
 		}
 		return res;

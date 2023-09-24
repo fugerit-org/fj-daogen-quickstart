@@ -28,7 +28,7 @@ public class WrapperDocument extends BasicWrapper<ModelDocument> implements Mode
 
 	public ModelDocument unwrap( WrapperDocument wrapper ) {
 		ModelDocument res = wrapper;
-		while ( res != null && res instanceof WrapperDocument ) { 
+		while ( res instanceof WrapperDocument ) { 
 			res = ((WrapperDocument)res).unwrapModel();
 		}
 		return res;

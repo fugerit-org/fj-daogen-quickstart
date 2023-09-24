@@ -44,7 +44,7 @@ public class ObjDocument extends WrapperDocument implements SQLData, StructMappe
 
 	@Override
 	public Map<String, Class<?>> newTypeMapper() throws SQLException {
-		Map<String, Class<?>> map = new HashMap<String, Class<?>>();
+		Map<String, Class<?>> map = new HashMap<>();
 		map.put( SQL_TYPE_NAME, ObjDocument.class );
 		return map;
 	}
@@ -92,9 +92,7 @@ public class ObjDocument extends WrapperDocument implements SQLData, StructMappe
 
 	public static ObjDocument wrap( ModelDocument model, java.sql.Connection conn ) throws SQLException {
 		ObjDocument res = wrap( model );
-		if ( res != null ) {
 			res.setupLobs( conn );
-		}
 		return res;
 	}
 

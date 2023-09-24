@@ -7,9 +7,9 @@ import org.fugerit.java.core.db.daogen.SimpleServiceResult;
 import org.fugerit.java.daogen.quickstart.def.model.ModelPerson;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 // custom import start ( code above here will be overwritten )
@@ -33,7 +33,7 @@ public class LoadPerson extends LoadPersonHelper {
 
 	private static final long serialVersionUID = 485519845436L;
 
-	@RequestMapping(value = "/id/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE )
+	@GetMapping(value = "/id/{id}", produces = MediaType.APPLICATION_JSON_VALUE )
 	public ResponseEntity<Object> getByID(@PathVariable( "id") String id) throws Exception {
 		ResponseEntity<Object> res = null;
 		try (CloseableDAOContext context = this.newDefaultContext() ) {

@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.0] - 2023-09-24
+
+### Added
+
+- [Code of conduct](https://github.com/fugerit-org/fj-universe/blob/main/CODE_OF_CONDUCT.md) badge.
+
+### Changed
+- fj-daogen-version set to 1.3.0
+- spring-boot version set to 3.1.4
+
 ## [1.1.10] - 2023-09-05
 
 ### Added

@@ -28,7 +28,7 @@ public class WrapperMappedTable extends BasicWrapper<ModelMappedTable> implement
 
 	public ModelMappedTable unwrap( WrapperMappedTable wrapper ) {
 		ModelMappedTable res = wrapper;
-		while ( res != null && res instanceof WrapperMappedTable ) { 
+		while ( res instanceof WrapperMappedTable ) { 
 			res = ((WrapperMappedTable)res).unwrapModel();
 		}
 		return res;

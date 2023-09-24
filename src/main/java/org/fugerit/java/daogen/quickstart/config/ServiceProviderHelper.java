@@ -14,7 +14,7 @@ public class ServiceProviderHelper<T> extends SimpleServiceProvider<T> {
 	 */
 	private static final long serialVersionUID = -3421974923085310713L;
 
-	private final static QuickstartLogicFacade FACADE = new QuickstartDataLogicFacade();
+	private static final QuickstartLogicFacade FACADE = new QuickstartDataLogicFacade();
 	
 	@Override
 	protected CloseableDAOContext newDefaultContext() throws DAOException {
