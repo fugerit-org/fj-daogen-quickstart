@@ -5,6 +5,7 @@ import org.fugerit.java.core.db.daogen.CloseableDAOContext;
 import org.fugerit.java.core.db.daogen.CloseableDAOContextSC;
 import org.fugerit.java.core.db.daogen.SimpleServiceProvider;
 import org.fugerit.java.daogen.quickstart.def.facade.QuickstartLogicFacade;
+import org.fugerit.java.daogen.quickstart.def.facade.QuickstartLogicFacadeHelper;
 import org.fugerit.java.daogen.quickstart.impl.facade.data.QuickstartDataLogicFacade;
 
 public class ServiceProviderHelper<T> extends SimpleServiceProvider<T> {
@@ -19,8 +20,8 @@ public class ServiceProviderHelper<T> extends SimpleServiceProvider<T> {
 	@Override
 	protected CloseableDAOContext newDefaultContext() throws DAOException {
 		try {
-			CloseableDAOContext context = new CloseableDAOContextSC( QuickstartDBHelper.newConnection() );
-			context.setAttribute( QuickstartLogicFacade.ATT_NAME , FACADE );
+			CloseableDAOContext context = new CloseableDAOContextSC( QuickstartDBHelper.newConnection() ); // NOSONAR
+			context.setAttribute( QuickstartLogicFacadeHelper.ATT_NAME , FACADE );
 			return context;
 		} catch (Exception e) {
 			throw new DAOException( e );
