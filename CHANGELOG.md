@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.1] - 2023-09-25
+
+### Added
+
+- att attribute 'jee-target-mode' with value 'jakarta' to [daogen-config](src/main/daogen/daogen-config.xml)
+- att attribute 'jdk-target-versiov' with value '17' to [daogen-config](src/main/daogen/daogen-config.xml)
+
+### Changed
+- fj-daogen-version set to 1.3.1
+
+### Removed
+
+- removed dependency : javax - javaee-api
+- github action workflows
+
 ## [1.3.0] - 2023-09-24
 
 ### Added

@@ -28,8 +28,8 @@ public class WrapperExample01 extends BasicWrapper<ModelExample01> implements Mo
 
 	public ModelExample01 unwrap( WrapperExample01 wrapper ) {
 		ModelExample01 res = wrapper;
-		while ( res instanceof WrapperExample01 ) { 
-			res = ((WrapperExample01)res).unwrapModel();
+		while ( res instanceof WrapperExample01 wrappedinstance ) { 
+			res = wrappedinstance.unwrapModel();
 		}
 		return res;
 	}
