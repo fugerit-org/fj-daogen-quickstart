@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - fj-version set to 8.4.1
 
+### Fixed
+
+- LICENSE placeholder
+
 ## [1.3.1] - 2023-09-25
 
 ### Added
