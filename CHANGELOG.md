@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- fj-version set to 8.4.1
+- fj-version set to 8.4.4
 
 ### Fixed
 
