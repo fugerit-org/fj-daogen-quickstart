@@ -30,7 +30,7 @@
 		<java-version-compliance>17</java-version-compliance>
 		<maven.compiler.source>${java-version-compliance}</maven.compiler.source>
 		<maven.compiler.target>${java-version-compliance}</maven.compiler.target>
-		<fj-version>8.4.4</fj-version>
+		<fj-version>8.4.5</fj-version>
 		<fj-daogen-version>${project.version}</fj-daogen-version>
 		<sb-version>3.1.4</sb-version>
 		<!-- daogen maven plugin configuration -->
