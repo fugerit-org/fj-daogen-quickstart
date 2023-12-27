@@ -7,9 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.2] - 2023-12-27
+
 ### Changed
 
-- fj-version set to 8.4.4
+- fj-version set to 8.4.6
+- fj-daogen-version set to 1.3.2
+- spring-boot version set to 3.2.1
 
 ### Fixed
 
