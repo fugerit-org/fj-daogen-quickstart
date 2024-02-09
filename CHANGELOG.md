@@ -12,6 +12,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - maven build and scan
 - Dockerfile
 
+### Removed
+
+- maven wrapper
+
 ## [1.3.2] - 2023-12-27
 
 ### Changed
