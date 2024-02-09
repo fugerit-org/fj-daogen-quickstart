@@ -36,7 +36,9 @@
 		<!-- daogen maven plugin configuration -->
 		<build-helper-maven-plugin-version>3.4.0</build-helper-maven-plugin-version>
 		<gen.base.dir>${project.basedir}</gen.base.dir>
-		<generated.source.daogen>target/generated-sources/daogen</generated.source.daogen>	
+		<generated.source.daogen>target/generated-sources/daogen</generated.source.daogen>
+		<!-- sonar cloud -->
+		<jacoco-maven-plugin-version>0.8.11</jacoco-maven-plugin-version>
 	</properties>
 
 	<build>
@@ -151,5 +153,59 @@
 	</organization>
 
 	<url>http://www.fugerit.org/java/</url>
+
+	<profiles>
+		
+		<profile>
+			<id>sonarfugerit</id>
+			<properties>
+				<!-- sonar cloud configuration -->
+				<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+				<sonar.organization>fugerit-org</sonar.organization>
+				<sonar.moduleKey>${project.artifactId}</sonar.moduleKey>
+				<!-- sonar.projectKey must be added by the project -->
+			</properties>
+		</profile>
+
+		<profile>
+			<id>coverage</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<configuration>
+							<skipTests>false</skipTests>
+						</configuration>
+					</plugin>
+					<plugin>
+						<groupId>org.jacoco</groupId>
+						<artifactId>jacoco-maven-plugin</artifactId>
+						<version>${jacoco-maven-plugin-version}</version>
+						<executions>
+							<execution>
+								<id>prepare-agent</id>
+								<goals>
+									<goal>prepare-agent</goal>
+								</goals>
+							</execution>
+							<execution>
+								<id>report</id>
+								<goals>
+									<goal>report</goal>
+								</goals>
+								<configuration>
+									<formats>
+										<format>XML</format>
+									</formats>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+	</profiles>
 
 </project>
