@@ -155,7 +155,7 @@
 	<url>http://www.fugerit.org/java/</url>
 
 	<profiles>
-		
+
 		<profile>
 			<id>sonarfugerit</id>
 			<properties>
