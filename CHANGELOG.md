@@ -7,10 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Changed
+### Added
 
 - maven build and scan
 - Dockerfile
+- docker publish workflow
 
 ### Removed
 
