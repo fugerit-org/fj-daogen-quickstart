@@ -21,9 +21,11 @@ public class QuickstartDBHelper {
 	private QuickstartDBHelper() {}
 	
 	private static final Logger logger = LoggerFactory.getLogger( QuickstartDBHelper.class );
-	 
-	public static final String DEFAULT_DB_CONN_PATH = "quickstart_db/quickstart-db-conn.properties";
-	public static final String DEFAULT_DB_INIT_PATH = "quickstart_db/hsqldb";
+
+	private static final String DEFAULT_DB_CONN_PATH = "quickstart_db/quickstart-db-conn.properties";
+	private static final String DEFAULT_DB_INIT_PATH = "quickstart_db/hsqldb";
+
+	private static final String[] SQL_INIT_SCRIPTS = { "100_db_setup.sql", "200_sample_db.sql", "900_examples.sql" };
 
 	private static final String DRV = "db-mode-dc-drv";
 	private static final String URL = "db-mode-dc-url";
@@ -48,21 +50,19 @@ public class QuickstartDBHelper {
         			Properties props = new Properties();
         			props.load( is );
                 	try ( Connection conn = newConnection( props ) ) {
-                		cf = props;
-                		ResScanner scanner = new ResScanner();
-                		List<String> initFiles = scanner.getResourceFiles( DEFAULT_DB_INIT_PATH );
-                		for ( String current : initFiles ) {
-                			String res = DEFAULT_DB_INIT_PATH+"/"+current;
-                			logger.info( "Current : {}", res );
-                    		try ( SQLScriptReader reader = new SQLScriptReader( QuickstartDBHelper.class.getClassLoader().getResourceAsStream( res ) ) ) {
-                    			SQLScriptFacade.executeAll(reader, conn);
-                    			cf = props;
-                    		}
-                		}
-            		}	
+						for ( int k=0; k<SQL_INIT_SCRIPTS.length; k++ ) {
+							String current = SQL_INIT_SCRIPTS[k];
+							String res = DEFAULT_DB_INIT_PATH+"/"+current;
+							logger.info( "Current : {}", res );
+							try ( SQLScriptReader reader = new SQLScriptReader( QuickstartDBHelper.class.getClassLoader().getResourceAsStream( res ) ) ) {
+								SQLScriptFacade.executeAll(reader, conn);
+
+							}
+						}
+            		}
+					cf = props;
         		}
     		} );
-
     	}
     } 
     
@@ -72,35 +72,3 @@ public class QuickstartDBHelper {
     }
 		
 }
-
-class ResScanner {
-	
-	public List<String> getResourceFiles(String path) throws IOException {
-	    List<String> filenames = new ArrayList<>();
-	
-	    try (
-	            InputStream in = getResourceAsStream(path);
-	            BufferedReader br = new BufferedReader(new InputStreamReader(in))) {
-	        String resource;
-	
-	        while ((resource = br.readLine()) != null) {
-	            filenames.add(resource);
-	        }
-	    }
-	
-	    return filenames;
-	}
-	
-	private InputStream getResourceAsStream(String resource) {
-	    final InputStream in
-	            = getContextClassLoader().getResourceAsStream(resource);
-	
-	    return in == null ? getClass().getResourceAsStream(resource) : in;
-	}
-	
-	private ClassLoader getContextClassLoader() {
-	    return Thread.currentThread().getContextClassLoader();
-	}
-	
-}
-
