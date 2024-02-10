@@ -7,7 +7,7 @@ on:
   # a pull request.
   push:
     branches:
-      - snapshot
+      - develop
   release:
     types: [published]
 
