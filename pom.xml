@@ -27,9 +27,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java-version-compliance>17</java-version-compliance>
-		<maven.compiler.source>${java-version-compliance}</maven.compiler.source>
-		<maven.compiler.target>${java-version-compliance}</maven.compiler.target>
+		<maven.compiler.release>17</maven.compiler.release>
 		<fj-version>8.4.7</fj-version>
 		<fj-daogen-version>${project.version}</fj-daogen-version>
 		<sb-version>3.1.4</sb-version>
