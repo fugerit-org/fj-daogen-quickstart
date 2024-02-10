@@ -7,7 +7,7 @@ on:
   # a pull request.
   push:
     branches:
-      - docker
+      - snapshot
   release:
     types: [published]
 
