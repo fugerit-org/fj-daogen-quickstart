@@ -14,11 +14,9 @@
 FROM eclipse-temurin:21.0.2_13-jre-alpine
 
 LABEL org.opencontainers.image.authors="Fugerit" \
-      org.opencontainers.image.source="Quarkus" \
+      org.opencontainers.image.source="SpringBoot" \
       org.opencontainers.image.revision="1.0.0"
 
-
 VOLUME /tmp
-ARG JAR_FILE
-COPY ${JAR_FILE} fj-daogen-quickstart.jar
+COPY target/fj-daogen-quickstart.jar fj-daogen-quickstart.jar
 ENTRYPOINT ["java","-jar","/fj-daogen-quickstart.jar"]
