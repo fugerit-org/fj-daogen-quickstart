@@ -60,6 +60,8 @@ jobs:
           # SonarCloud access token should be generated from https://sonarcloud.io/account/security/
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       # snyk
+      - name: Prepare app.jar
+        run: cp target/fj-daogen-quickstart-*.jar target/fj-daogen-quickstart.jar
       - name: Build a Docker image
         run: docker build -t fj-daogen-quickstart .
       - name: Run Snyk to check Docker image for vulnerabilities
