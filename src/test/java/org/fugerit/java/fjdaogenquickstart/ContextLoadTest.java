@@ -28,10 +28,12 @@ class ContextLoadTest {
 		assertThat( this.loadExample01 ).isNotNull();
 		assertThat( this.loadMappedTable ).isNotNull();
 		assertThat( this.loadPerson ).isNotNull();
+		String[] args = {};
+		main( args );
 	}
 
 	public static void main(String[] args) {
-		SpringApplication.run(FjDaogenQuickstartApplication.class, args);
+		FjDaogenQuickstartApplication.main(args);
 	}
 
 }

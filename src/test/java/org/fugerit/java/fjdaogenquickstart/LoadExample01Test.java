@@ -9,7 +9,7 @@ import org.springframework.boot.test.web.server.LocalServerPort;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class LoadExample01Test {
+class LoadExample01Test {
 
     @LocalServerPort
     private int port;
@@ -17,11 +17,15 @@ public class LoadExample01Test {
     @Autowired
     private TestRestTemplate restTemplate;
 
+    private String test = "field3";
+
+    private String basePath = "/fj-daogen-quickstart/jax-rs/example01";
+
     @Test
     void testLoadAll() throws Exception {
         assertThat(this.restTemplate.getForObject(
-                "http://localhost:" + port + "/fj-daogen-quickstart/jax-rs/example01/load/all",
-                String.class)).contains("field3");
+                "http://localhost:" + port + basePath + "/load/all",
+                String.class)).contains(test);
     }
 
 }
