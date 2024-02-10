@@ -1,20 +1,15 @@
 package org.fugerit.java.daogen.quickstart.config;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Properties;
-
 import org.fugerit.java.core.db.dao.DAORuntimeException;
 import org.fugerit.java.core.db.helpers.SQLScriptFacade;
 import org.fugerit.java.core.db.helpers.SQLScriptReader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.InputStream;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.util.Properties;
 
 public class QuickstartDBHelper {
 
