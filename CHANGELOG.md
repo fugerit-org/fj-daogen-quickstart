@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.5.1] - 2024-02-28
+
 ### Added
 
 - sonar quality gate and coverage badge
@@ -14,6 +16,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Dockerfile documentation
+- fj-version set to 8.4.10
+- fj-daogen-version-version set to 1.5.1
+- spring-boot version set to 3.2.3
 
 ### Fixed
 
