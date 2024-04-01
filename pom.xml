@@ -34,8 +34,6 @@
 		<build-helper-maven-plugin-version>3.4.0</build-helper-maven-plugin-version>
 		<gen.base.dir>${project.basedir}</gen.base.dir>
 		<generated.source.daogen>target/generated-sources/daogen</generated.source.daogen>
-		<!-- sonar cloud -->
-		<jacoco-maven-plugin-version>0.8.11</jacoco-maven-plugin-version>
 	</properties>
 
 	<build>

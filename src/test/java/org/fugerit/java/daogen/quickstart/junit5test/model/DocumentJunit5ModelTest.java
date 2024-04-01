@@ -1,11 +1,11 @@
-package org.fugerit.java.daogen.quickstart.junit4test.model;
+package org.fugerit.java.daogen.quickstart.junit5test.model;
 
 import org.fugerit.java.daogen.quickstart.def.facade.DocumentFinder;
 import org.fugerit.java.daogen.quickstart.def.model.ModelDocument;
 import org.fugerit.java.daogen.quickstart.impl.helper.HelperDocument;
 import org.fugerit.java.daogen.quickstart.impl.helper.WrapperDocument;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
 // custom import end ( code below here will be overwritten )
 
 /**
- * DocumentJunit4ModelTest, version : 1.0.0
+ * DocumentJunit5ModelTest, version : 1.0.0
  *
  * author: fugerit
  *
@@ -21,12 +21,12 @@ import org.slf4j.LoggerFactory;
  * // custom code start ( code above here will be overwritten )
  * // custom code end ( code below here will be overwritten )
  */
-public class DocumentJunit4ModelTest {
+class DocumentJunit5ModelTest {
 
 	// custom code start ( code above here will be overwritten )
 	// custom code end ( code below here will be overwritten )
 
-	private static final Logger logger = LoggerFactory.getLogger( DocumentJunit4ModelTest.class );
+	private static final Logger logger = LoggerFactory.getLogger( DocumentJunit5ModelTest.class );
 
 	public void printAll( ModelDocument current ) { 
 		logger.info( "ID-> {}", current.getId() );
@@ -41,42 +41,42 @@ public class DocumentJunit4ModelTest {
 
 	public ModelDocument newInstance() { 
 		WrapperDocument current = new WrapperDocument( new HelperDocument() );
-		Assert.assertTrue( current.isEmpty() );
+		Assertions.assertTrue( current.isEmpty() );
 		current.setId(new java.math.BigDecimal( "1" ));
-		Assert.assertFalse( current.isEmpty() );
+		Assertions.assertFalse( current.isEmpty() );
 		current.setIdOwner(new java.math.BigDecimal( "1" ));
-		Assert.assertFalse( current.isEmpty() );
+		Assertions.assertFalse( current.isEmpty() );
 		current.setIdCreator(new java.math.BigDecimal( "1" ));
-		Assert.assertFalse( current.isEmpty() );
+		Assertions.assertFalse( current.isEmpty() );
 		current.setCreationDate(new java.util.Date());
-		Assert.assertFalse( current.isEmpty() );
+		Assertions.assertFalse( current.isEmpty() );
 		current.setUpdateDate(new java.util.Date());
-		Assert.assertFalse( current.isEmpty() );
+		Assertions.assertFalse( current.isEmpty() );
 		current.setPath("1");
-		Assert.assertFalse( current.isEmpty() );
+		Assertions.assertFalse( current.isEmpty() );
 		current.setState(new java.math.BigDecimal( "1" ));
-		Assert.assertFalse( current.isEmpty() );
+		Assertions.assertFalse( current.isEmpty() );
 		current.setInfo(null);
-		Assert.assertFalse( current.isEmpty() );
+		Assertions.assertFalse( current.isEmpty() );
 		logger.info( "unwrap :  {}", current.unwrap( current ) );
 		return current;
 	}
 
 	@Test
-	public void testJUnit4ModelDocument() { 
+	 void testJUnit5ModelDocument() { 
 		ModelDocument current = this.newInstance();
 		this.printAll( current );
 		logger.info( "current toString() : {}", current );
 		org.fugerit.java.core.function.SafeFunction.apply( () -> org.fugerit.java.core.io.ObjectIO.fullSerializationTest( current ) );
-		Assert.assertNotNull( current );
+		Assertions.assertNotNull( current );
 		DocumentFinder finder1 = new DocumentFinder();
 		finder1.setModel( current );
 		logger.info( "finder1.getModel() -> {}", finder1.getModel() );
 		finder1.setId( current.getId() );
-		Assert.assertEquals( current.getId(), finder1.getId() );
-		Assert.assertNotNull( DocumentFinder.newInstance( current.getId() ) );
-		Assert.assertNotNull( DocumentFinder.newInstance( current ) );
-		Assert.assertNotNull( finder1 );
+		Assertions.assertEquals( current.getId(), finder1.getId() );
+		Assertions.assertNotNull( DocumentFinder.newInstance( current.getId() ) );
+		Assertions.assertNotNull( DocumentFinder.newInstance( current ) );
+		Assertions.assertNotNull( finder1 );
 	}
 
 }
