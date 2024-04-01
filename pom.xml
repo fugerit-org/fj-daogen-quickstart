@@ -12,7 +12,7 @@
 
 	<groupId>org.fugerit.java</groupId>
 	<artifactId>fj-daogen-quickstart</artifactId>
-	<version>1.8.0</version>
+	<version>1.8.1</version>
 
 	<name>fj-daogen-quickstart</name>
 	<description>fj-daogen-quickstart</description>
@@ -178,24 +178,18 @@
 					<plugin>
 						<groupId>org.jacoco</groupId>
 						<artifactId>jacoco-maven-plugin</artifactId>
-						<version>${jacoco-maven-plugin-version}</version>
 						<executions>
 							<execution>
-								<id>prepare-agent</id>
 								<goals>
 									<goal>prepare-agent</goal>
 								</goals>
 							</execution>
 							<execution>
 								<id>report</id>
+								<phase>test</phase>
 								<goals>
 									<goal>report</goal>
 								</goals>
-								<configuration>
-									<formats>
-										<format>XML</format>
-									</formats>
-								</configuration>
 							</execution>
 						</executions>
 					</plugin>
