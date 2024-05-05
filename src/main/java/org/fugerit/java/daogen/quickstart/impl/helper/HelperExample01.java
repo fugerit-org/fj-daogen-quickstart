@@ -1,6 +1,5 @@
 package org.fugerit.java.daogen.quickstart.impl.helper;
 
-import org.fugerit.java.core.db.daogen.BasicHelper;
 import org.fugerit.java.daogen.quickstart.def.model.ModelExample01;
 
 // custom import start ( code above here will be overwritten )
@@ -15,24 +14,10 @@ import org.fugerit.java.daogen.quickstart.def.model.ModelExample01;
  * // custom code start ( code above here will be overwritten )
  * // custom code end ( code below here will be overwritten )
  */
-public class HelperExample01 extends BasicHelper implements ModelExample01 {
+public class HelperExample01 implements ModelExample01 {
 
 	// custom code start ( code above here will be overwritten )
 	// custom code end ( code below here will be overwritten )
-
-	private static final long serialVersionUID = 843387278910L;
-
-	private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
-		// this class is conditionally serializable, depending on contained object
-		// special situation can be handled using this method in future
-		out.defaultWriteObject();
-	}
-
-	private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, ClassNotFoundException {
-		// this class is conditionally serializable, depending on contained object
-		// special situation can be handled using this method in future
-		in.defaultReadObject();
-	}
 
 	/*
 	 * fields generated for entity attributes 
@@ -49,15 +34,15 @@ public class HelperExample01 extends BasicHelper implements ModelExample01 {
 		return this.field1;
 	}
 
-	private java.util.Date field2;
+	private java.time.LocalDate field2;
 
 	@Override
-	public void setField2( java.util.Date value ) {
+	public void setField2( java.time.LocalDate value ) {
 		this.field2 = value;
 	}
 
 	@Override
-	public java.util.Date getField2() {
+	public java.time.LocalDate getField2() {
 		return this.field2;
 	}
 

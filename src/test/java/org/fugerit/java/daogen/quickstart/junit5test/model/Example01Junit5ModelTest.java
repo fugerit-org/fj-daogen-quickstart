@@ -39,7 +39,7 @@ class Example01Junit5ModelTest {
 		Assertions.assertTrue( current.isEmpty() );
 		current.setField1("1");
 		Assertions.assertFalse( current.isEmpty() );
-		current.setField2(new java.util.Date());
+		current.setField2(null);
 		Assertions.assertFalse( current.isEmpty() );
 		current.setField3("1");
 		Assertions.assertFalse( current.isEmpty() );
@@ -52,7 +52,6 @@ class Example01Junit5ModelTest {
 		ModelExample01 current = this.newInstance();
 		this.printAll( current );
 		logger.info( "current toString() : {}", current );
-		org.fugerit.java.core.function.SafeFunction.apply( () -> org.fugerit.java.core.io.ObjectIO.fullSerializationTest( current ) );
 		Assertions.assertNotNull( current );
 		Example01Finder finder1 = new Example01Finder();
 		finder1.setModel( current );

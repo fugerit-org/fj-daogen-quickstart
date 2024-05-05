@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - fj-daogen-version set to 1.8.2
+- type-mapper-time-ng set to enabled (requires fj-daogen 1.8.2+)
 
 ## [1.5.1] - 2024-02-28
 

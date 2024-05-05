@@ -49,7 +49,6 @@ class MappedTableJunit5ModelTest {
 		ModelMappedTable current = this.newInstance();
 		this.printAll( current );
 		logger.info( "current toString() : {}", current );
-		org.fugerit.java.core.function.SafeFunction.apply( () -> org.fugerit.java.core.io.ObjectIO.fullSerializationTest( current ) );
 		Assertions.assertNotNull( current );
 		MappedTableFinder finder1 = new MappedTableFinder();
 		finder1.setModel( current );

@@ -48,9 +48,9 @@ class DocumentJunit5ModelTest {
 		Assertions.assertFalse( current.isEmpty() );
 		current.setIdCreator(new java.math.BigDecimal( "1" ));
 		Assertions.assertFalse( current.isEmpty() );
-		current.setCreationDate(new java.util.Date());
+		current.setCreationDate(null);
 		Assertions.assertFalse( current.isEmpty() );
-		current.setUpdateDate(new java.util.Date());
+		current.setUpdateDate(null);
 		Assertions.assertFalse( current.isEmpty() );
 		current.setPath("1");
 		Assertions.assertFalse( current.isEmpty() );
@@ -67,7 +67,6 @@ class DocumentJunit5ModelTest {
 		ModelDocument current = this.newInstance();
 		this.printAll( current );
 		logger.info( "current toString() : {}", current );
-		org.fugerit.java.core.function.SafeFunction.apply( () -> org.fugerit.java.core.io.ObjectIO.fullSerializationTest( current ) );
 		Assertions.assertNotNull( current );
 		DocumentFinder finder1 = new DocumentFinder();
 		finder1.setModel( current );

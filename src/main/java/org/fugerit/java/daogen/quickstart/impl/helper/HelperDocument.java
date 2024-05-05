@@ -1,6 +1,5 @@
 package org.fugerit.java.daogen.quickstart.impl.helper;
 
-import org.fugerit.java.core.db.daogen.BasicHelper;
 import org.fugerit.java.daogen.quickstart.def.model.ModelDocument;
 
 // custom import start ( code above here will be overwritten )
@@ -15,24 +14,10 @@ import org.fugerit.java.daogen.quickstart.def.model.ModelDocument;
  * // custom code start ( code above here will be overwritten )
  * // custom code end ( code below here will be overwritten )
  */
-public class HelperDocument extends BasicHelper implements ModelDocument {
+public class HelperDocument implements ModelDocument {
 
 	// custom code start ( code above here will be overwritten )
 	// custom code end ( code below here will be overwritten )
-
-	private static final long serialVersionUID = 112054334824L;
-
-	private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
-		// this class is conditionally serializable, depending on contained object
-		// special situation can be handled using this method in future
-		out.defaultWriteObject();
-	}
-
-	private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, ClassNotFoundException {
-		// this class is conditionally serializable, depending on contained object
-		// special situation can be handled using this method in future
-		in.defaultReadObject();
-	}
 
 	/*
 	 * fields generated for entity attributes 
@@ -73,27 +58,27 @@ public class HelperDocument extends BasicHelper implements ModelDocument {
 		return this.idCreator;
 	}
 
-	private java.util.Date creationDate;
+	private java.time.LocalDateTime creationDate;
 
 	@Override
-	public void setCreationDate( java.util.Date value ) {
+	public void setCreationDate( java.time.LocalDateTime value ) {
 		this.creationDate = value;
 	}
 
 	@Override
-	public java.util.Date getCreationDate() {
+	public java.time.LocalDateTime getCreationDate() {
 		return this.creationDate;
 	}
 
-	private java.util.Date updateDate;
+	private java.time.LocalDateTime updateDate;
 
 	@Override
-	public void setUpdateDate( java.util.Date value ) {
+	public void setUpdateDate( java.time.LocalDateTime value ) {
 		this.updateDate = value;
 	}
 
 	@Override
-	public java.util.Date getUpdateDate() {
+	public java.time.LocalDateTime getUpdateDate() {
 		return this.updateDate;
 	}
 
