@@ -12,7 +12,7 @@
 
 	<groupId>org.fugerit.java</groupId>
 	<artifactId>fj-daogen-quickstart</artifactId>
-	<version>1.8.1</version>
+	<version>1.8.2</version>
 
 	<name>fj-daogen-quickstart</name>
 	<description>fj-daogen-quickstart</description>
@@ -28,8 +28,8 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.release>17</maven.compiler.release>
-		<fj-version>8.5.5</fj-version>
-		<fj-daogen-version>1.8.1</fj-daogen-version>
+		<fj-version>8.5.9</fj-version>
+		<fj-daogen-version>1.8.2</fj-daogen-version>
 		<!-- daogen maven plugin configuration -->
 		<build-helper-maven-plugin-version>3.4.0</build-helper-maven-plugin-version>
 		<gen.base.dir>${project.basedir}</gen.base.dir>
