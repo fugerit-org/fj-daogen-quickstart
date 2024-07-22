@@ -28,7 +28,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.release>17</maven.compiler.release>
-		<fj-version>8.6.2</fj-version>
+		<fj-version>8.6.4</fj-version>
 		<fj-daogen-version>1.8.2</fj-daogen-version>
 		<!-- daogen maven plugin configuration -->
 		<build-helper-maven-plugin-version>3.4.0</build-helper-maven-plugin-version>
